@@ -441,4 +441,170 @@
                             <h5 class="h6 text-primary">Dokumen:</h5>
                             <ul class="document-list">
                                 <li>Formulir Permintaan Perubahan</li>
-                                <li>Laporan Penilaian
+                                <li>Laporan Penilaian Dampak</li>
+                                <li>Catatan Sosialisasi</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Klausul 9: Evaluasi Kinerja -->
+            <div id="clause9" class="clause-content">
+                <h2 class="d-flex align-items-center">
+                    <span class="badge clause-badge rounded-pill me-2">9</span>
+                    Evaluasi Kinerja
+                </h2>
+                
+                <div class="sub-clause">
+                    <h4>9.1 Pemantauan, pengukuran, analisis, dan evaluasi</h4>
+                    <div class="sub-sub-clause">
+                        <h5>9.1.1 Umum</h5>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="implementasi-box">
+                                    <h6 class="h6 text-primary">Implementasi:</h6>
+                                    <ul>
+                                        <li>Penetapan indikator kinerja</li>
+                                        <li>Pengumpulan data insiden</li>
+                                        <li>Analisis tren kecelakaan</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h6 class="h6 text-primary">Dokumen:</h6>
+                                <ul class="document-list">
+                                    <li>Daftar Indikator Kinerja</li>
+                                    <li>Formulir Pelaporan Insiden</li>
+                                    <li>Laporan Analisis Tren</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sub-clause">
+                    <h4>9.2 Audit internal</h4>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="implementasi-box">
+                                <h5 class="h6 text-primary">Implementasi:</h5>
+                                <ul>
+                                    <li>Penyusunan program audit</li>
+                                    <li>Pelatihan auditor internal</li>
+                                    <li>Pelaksanaan audit</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="h6 text-primary">Dokumen:</h5>
+                            <ul class="document-list">
+                                <li>Jadwal Audit Internal</li>
+                                <li>Laporan Audit Internal</li>
+                                <li>Daftar Auditor Internal</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Klausul 10: Peningkatan -->
+            <div id="clause10" class="clause-content">
+                <h2 class="d-flex align-items-center">
+                    <span class="badge clause-badge rounded-pill me-2">10</span>
+                    Peningkatan
+                </h2>
+                
+                <div class="sub-clause">
+                    <h4>10.1 Umum</h4>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="implementasi-box">
+                                <h5 class="h6 text-primary">Implementasi:</h5>
+                                <ul>
+                                    <li>Peningkatan berkelanjutan</li>
+                                    <li>Pembelajaran dari insiden</li>
+                                    <li>Penyempurnaan proses</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="h6 text-primary">Dokumen:</h5>
+                            <ul class="document-list">
+                                <li>Rencana Peningkatan K3</li>
+                                <li>Register Best Practice</li>
+                                <li>Laporan Pembelajaran Insiden</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sub-clause">
+                    <h4>10.2 Insiden dan tindakan korektif</h4>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="implementasi-box">
+                                <h5 class="h6 text-primary">Implementasi:</h5>
+                                <ul>
+                                    <li>Pelaporan dan investigasi insiden</li>
+                                    <li>Analisis akar penyebab</li>
+                                    <li>Penerapan tindakan korektif</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="h6 text-primary">Dokumen:</h5>
+                            <ul class="document-list">
+                                <li>Formulir Laporan Insiden</li>
+                                <li>Hasil Investigasi</li>
+                                <li>Register Tindakan Korektif</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p class="mb-0">Dokumen Panduan Implementasi ISO 45001:2018 © 2023</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const clauseSelector = document.getElementById('clauseSelector');
+            const defaultMessage = document.getElementById('defaultMessage');
+            const clauseContents = document.querySelectorAll('.clause-content');
+            
+            clauseSelector.addEventListener('change', function() {
+                const selectedClause = this.value;
+                
+                // Sembunyikan semua konten dan pesan default
+                clauseContents.forEach(content => {
+                    content.classList.remove('active');
+                });
+                defaultMessage.style.display = 'none';
+                
+                // Tampilkan konten yang dipilih
+                if (selectedClause) {
+                    document.getElementById(selectedClause).classList.add('active');
+                } else {
+                    defaultMessage.style.display = 'block';
+                }
+                
+                // Scroll ke konten yang dipilih
+                if (selectedClause) {
+                    document.getElementById('clausesContainer').scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
