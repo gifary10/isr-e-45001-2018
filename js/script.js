@@ -1,207 +1,85 @@
-/**
- * script.js - ISO 45001:2018 Documentation System
- * Fungsi utama untuk navigasi dan interaksi halaman
- */
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Inisialisasi komponen saat halaman dimuat
-    initNavigation();
-    initBackToTop();
+document.addEventListener('DOMContentLoaded', () => {
+    handleClauseNavigation();
     highlightCurrentClause();
+    setupBackToTop();
     setupPrintButtons();
-    setupSearchFunctionality();
+    setupSearch();
 });
 
-/**
- * Fungsi untuk inisialisasi navigasi dropdown
- */
-function initNavigation() {
+function handleClauseNavigation() {
     const clauseSelector = document.getElementById('clauseSelector');
-    if (clauseSelector) {
-        // Set dropdown ke halaman saat ini
-        const currentPage = window.location.pathname.split('/').pop();
-        clauseSelector.value = currentPage;
-        
-        // Tambahkan event listener untuk navigasi
-        clauseSelector.addEventListener('change', function() {
-            const selectedValue = this.value;
-            if (selectedValue) {
-                window.location.href = selectedValue;
-            }
-        });
+    if (!clauseSelector) return;
+
+    const currentFile = window.location.pathname.split('/').pop();
+    const optionToSelect = Array.from(clauseSelector.options).find(
+        option => option.value === currentFile
+    );
+
+    if (optionToSelect) {
+        clauseSelector.value = currentFile;
     }
+
+    clauseSelector.addEventListener('change', () => {
+        const selected = clauseSelector.value;
+        if (selected) {
+            window.location.href = selected;
+        }
+    });
 }
 
-/**
- * Fungsi untuk menyorot klausul/sub-klausul saat ini di URL hash
- */
 function highlightCurrentClause() {
     if (window.location.hash) {
-        const targetElement = document.querySelector(window.location.hash);
-        if (targetElement) {
-            targetElement.classList.add('highlighted-clause');
-            
-            // Scroll ke elemen dengan offset untuk header
+        const target = document.querySelector(window.location.hash);
+        if (target) {
+            target.classList.add('highlighted-clause');
+
             setTimeout(() => {
-                const headerOffset = 100;
-                const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
+                const offset = 100;
+                const position = target.getBoundingClientRect().top + window.scrollY - offset;
+                window.scrollTo({ top: position, behavior: 'smooth' });
             }, 100);
         }
     }
 }
 
-/**
- * Fungsi untuk inisialisasi tombol "Back to Top"
- */
-function initBackToTop() {
-    const backToTopButton = document.createElement('button');
-    backToTopButton.innerHTML = '&uarr;';
-    backToTopButton.id = 'backToTopBtn';
-    backToTopButton.title = 'Kembali ke atas';
-    backToTopButton.classList.add('back-to-top');
-    document.body.appendChild(backToTopButton);
-    
-    // Tampilkan/sembunyikan tombol saat scroll
-    window.addEventListener('scroll', function() {
-        if (window.pageYOffset > 300) {
-            backToTopButton.style.display = 'block';
-        } else {
-            backToTopButton.style.display = 'none';
-        }
+function setupBackToTop() {
+    const button = document.createElement('button');
+    button.id = 'backToTopBtn';
+    button.innerHTML = '&uarr;';
+    button.title = 'Kembali ke atas';
+    button.classList.add('back-to-top');
+    document.body.appendChild(button);
+
+    window.addEventListener('scroll', () => {
+        button.style.display = window.scrollY > 300 ? 'block' : 'none';
     });
-    
-    // Fungsi untuk kembali ke atas
-    backToTopButton.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
+
+    button.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 }
 
-/**
- * Fungsi untuk setup tombol cetak
- */
 function setupPrintButtons() {
-    const printButtons = document.querySelectorAll('.print-btn');
-    printButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            window.print();
-        });
+    document.querySelectorAll('.print-btn').forEach(btn => {
+        btn.addEventListener('click', () => window.print());
     });
 }
 
-/**
- * Fungsi untuk setup pencarian (jika ada)
- */
-function setupSearchFunctionality() {
-    const searchInput = document.getElementById('searchInput');
-    const searchResults = document.getElementById('searchResults');
-    
-    if (searchInput && searchResults) {
-        searchInput.addEventListener('input', function() {
-            const searchTerm = this.value.toLowerCase();
-            
-            if (searchTerm.length > 2) {
-                // Implementasi pencarian bisa ditambahkan di sini
-                // Contoh sederhana:
-                const allContent = document.body.innerText.toLowerCase();
-                const matches = allContent.includes(searchTerm);
-                
-                if (matches) {
-                    searchResults.innerHTML = '<p>Hasil ditemukan. Scroll untuk melihat.</p>';
-                } else {
-                    searchResults.innerHTML = '<p>Tidak ditemukan hasil pencarian.</p>';
-                }
-            } else {
-                searchResults.innerHTML = '';
-            }
-        });
-    }
-}
+function setupSearch() {
+    const input = document.getElementById('searchInput');
+    const results = document.getElementById('searchResults');
 
-/**
- * Fungsi untuk navigasi antar klausul
- */
-function navigateToClause() {
-    const selector = document.getElementById('clauseSelector');
-    if (selector) {
-        const selectedValue = selector.value;
-        if (selectedValue) {
-            window.location.href = selectedValue;
-        }
-    }
-}
+    if (!input || !results) return;
 
-/**
- * Fungsi untuk menyalin teks ke clipboard
- */
-function copyToClipboard(text, element) {
-    navigator.clipboard.writeText(text).then(function() {
-        // Tampilkan feedback
-        const originalText = element.innerHTML;
-        element.innerHTML = 'Tersalin!';
-        
-        setTimeout(function() {
-            element.innerHTML = originalText;
-        }, 2000);
-    }).catch(function(err) {
-        console.error('Gagal menyalin: ', err);
-    });
-}
-
-/**
- * Fungsi untuk toggle visibilitas konten
- */
-function toggleContent(contentId, toggleButton) {
-    const content = document.getElementById(contentId);
-    if (content) {
-        content.classList.toggle('hidden-content');
-        
-        // Update teks tombol
-        if (content.classList.contains('hidden-content')) {
-            toggleButton.innerHTML = 'Tampilkan <i class="bi bi-chevron-down"></i>';
+    input.addEventListener('input', () => {
+        const term = input.value.toLowerCase();
+        if (term.length > 2) {
+            const bodyText = document.body.innerText.toLowerCase();
+            results.innerHTML = bodyText.includes(term)
+                ? '<p>Hasil ditemukan. Scroll untuk melihat.</p>'
+                : '<p>Tidak ditemukan hasil pencarian.</p>';
         } else {
-            toggleButton.innerHTML = 'Sembunyikan <i class="bi bi-chevron-up"></i>';
+            results.innerHTML = '';
         }
-    }
-}
-
-/**
- * Fungsi untuk menangani keyboard navigation
- */
-document.addEventListener('keydown', function(e) {
-    // Ctrl + F untuk fokus ke search input
-    if (e.ctrlKey && e.key === 'f') {
-        e.preventDefault();
-        const searchInput = document.getElementById('searchInput');
-        if (searchInput) {
-            searchInput.focus();
-        }
-    }
-    
-    // Esc untuk keluar dari search
-    if (e.key === 'Escape') {
-        const searchInput = document.getElementById('searchInput');
-        if (searchInput) {
-            searchInput.blur();
-        }
-    }
-});
-
-// Export fungsi untuk pengujian (jika diperlukan)
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = {
-        initNavigation,
-        highlightCurrentClause,
-        navigateToClause,
-        copyToClipboard,
-        toggleContent
-    };
+    });
 }
