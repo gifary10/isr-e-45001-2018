@@ -968,36 +968,6 @@
     <!-- Local Bootstrap JS -->
     <script src="js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const clauseSelector = document.getElementById('clauseSelector');
-            const defaultMessage = document.getElementById('defaultMessage');
-            const clauseContents = document.querySelectorAll('.clause-content');
-            
-            clauseSelector.addEventListener('change', function() {
-                const selectedClause = this.value;
-                
-                // Sembunyikan semua konten dan pesan default
-                clauseContents.forEach(content => {
-                    content.classList.remove('active');
-                });
-                defaultMessage.style.display = 'none';
-                
-                // Tampilkan konten yang dipilih
-                if (selectedClause) {
-                    document.getElementById(selectedClause).classList.add('active');
-                } else {
-                    defaultMessage.style.display = 'block';
-                }
-                
-                // Scroll ke konten yang dipilih
-                if (selectedClause) {
-                    document.getElementById('clausesContainer').scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
+    <script src="js/script.js"></script>
 </body>
 </html>
