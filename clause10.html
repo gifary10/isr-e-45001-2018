@@ -25,7 +25,7 @@
 
     <div class="container">
         <div class="text-center">
-            <select class="form-select nav-select" id="clauseSelector" onchange="navigateToClause()">
+            <select class="form-select nav-select" id="clauseSelector">
                 <option value="">-- Pilih Klausul --</option>
                 <option value="clause4.html">4. Konteks Organisasi</option>
                 <option value="clause5.html">5. Kepemimpinan dan Partisipasi Pekerja</option>
@@ -112,14 +112,6 @@
 
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
-    <script>
-        function navigateToClause() {
-            const selector = document.getElementById('clauseSelector');
-            const selectedValue = selector.value;
-            if (selectedValue) {
-                window.location.href = selectedValue;
-            }
-        }
-    </script>
+    
 </body>
 </html>
