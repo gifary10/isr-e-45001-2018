@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>Klausul 4 - Konteks Organisasi</title>
+    <title>Klausul 4 - Konteks Organisasi | ISO 45001</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <style>
         :root {
-            --primary: #2563eb;
-            --primary-light: #dbeafe;
+            --primary: #f97316;
+            --primary-light: #ffedd5;
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -17,116 +17,215 @@
             -webkit-tap-highlight-color: transparent;
             padding-bottom: 60px;
         }
-        .clause-card {
+        .nav-back {
+            background-color: white;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .content-card {
             border-radius: 14px;
             border: none;
+        }
+        .req-item {
+            border-left: 3px solid var(--primary);
             transition: all 0.2s ease;
-            overflow: hidden;
         }
-        .clause-card:active {
-            transform: scale(0.98);
+        .req-item:hover {
+            background-color: var(--primary-light);
         }
-        .clause-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 16px;
+        .doc-badge {
+            background-color: var(--primary-light);
+            color: var(--primary);
         }
-        .logo-img {
-            height: 40px;
-        }
-        .intro-box {
-            background-color: #f1f5f9;
-            border-radius: 14px;
-        }
-        .back-btn {
-            position: absolute;
-            left: 15px;
-            top: 15px;
+        .imp-badge {
+            background-color: #e0f2fe;
+            color: #0369a1;
         }
     </style>
 </head>
 <body>
+    <!-- Header -->
+    <nav class="nav-back navbar sticky-top px-3 py-2">
+        <div class="container-fluid">
+            <a href="index.html" class="text-decoration-none">
+                <i class="bi bi-arrow-left text-dark fs-5 me-2"></i>
+            </a>
+            <div class="navbar-brand fs-6 text-dark fw-bold">
+                Klausul 4: Konteks Organisasi
+            </div>
+            <div class="d-flex">
+                <i class="bi bi-info-circle text-primary fs-5"></i>
+            </div>
+        </div>
+    </nav>
+
     <div class="container px-3 py-3">
-        <!-- Back Button -->
-        <a href="index.html" class="back-btn btn btn-sm btn-light rounded-circle shadow-sm">
-            <i class="bi bi-arrow-left"></i>
-        </a>
-
-        <!-- Header with Logo -->
-        <div class="text-center mb-3">
-            <img src="logop.png" alt="ISO 45001" class="logo-img mb-2">
-            <h5 class="fw-bold text-dark mb-1">Klausul 4</h5>
-            <p class="text-muted small">Konteks Organisasi</p>
-        </div>
-
-        <!-- Clause Content -->
-        <div class="clause-card card shadow-sm mb-4">
+        <!-- Understanding Section -->
+        <div class="content-card card shadow-sm mb-4">
             <div class="card-body">
-                <div class="d-flex align-items-center mb-3">
-                    <div class="clause-icon bg-primary bg-opacity-10 text-primary me-3">
-                        <i class="bi bi-building fs-5"></i>
-                    </div>
-                    <h5 class="fw-bold mb-0">4.1 Memahami Organisasi dan Konteksnya</h5>
+                <h5 class="card-title fw-bold text-primary">Pemahaman Klausul 4</h5>
+                <p class="small">Klausul 4 meminta organisasi untuk memahami konteks eksternal dan internal yang relevan dengan tujuan dan arah strategisnya, serta bagaimana konteks ini memengaruhi kemampuan organisasi untuk mencapai hasil yang diinginkan dari sistem manajemen K3.</p>
+                
+                <div class="alert alert-light small border-start border-primary border-3">
+                    <i class="bi bi-lightbulb text-primary"></i> <strong>Konteks Organisasi</strong> adalah kombinasi dari masalah internal dan eksternal yang dapat memengaruhi pendekatan organisasi dalam menetapkan dan mencapai tujuan K3-nya.
                 </div>
-                <p class="small text-muted">
-                    Organisasi harus menentukan masalah eksternal dan internal yang relevan dengan tujuan dan pengarahan strategisnya, dan yang mempengaruhi kemampuannya untuk mencapai hasil yang diinginkan dari sistem manajemen K3.
-                </p>
             </div>
         </div>
 
-        <div class="clause-card card shadow-sm mb-4">
+        <!-- Requirements Section -->
+        <div class="content-card card shadow-sm mb-4">
             <div class="card-body">
-                <div class="d-flex align-items-center mb-3">
-                    <div class="clause-icon bg-primary bg-opacity-10 text-primary me-3">
-                        <i class="bi bi-people fs-5"></i>
+                <h5 class="card-title fw-bold text-primary mb-3">Persyaratan Klausul 4</h5>
+                
+                <div class="req-item p-3 mb-2 rounded">
+                    <h6 class="fw-bold small">4.1 Memahami organisasi dan konteksnya</h6>
+                    <p class="small text-muted mb-2">Organisasi harus menentukan isu eksternal dan internal yang relevan dengan tujuan dan pengaruhnya terhadap kemampuan untuk mencapai hasil yang diinginkan dari sistem manajemen K3.</p>
+                    <div class="d-flex flex-wrap gap-1">
+                        <span class="badge imp-badge small">Implementasi: Analisis PESTEL & SWOT</span>
+                        <span class="badge doc-badge small">Dokumen: Laporan Analisis Konteks</span>
                     </div>
-                    <h5 class="fw-bold mb-0">4.2 Memahami Kebutuhan dan Harapan Pekerja</h5>
                 </div>
-                <p class="small text-muted">
-                    Organisasi harus menentukan:
-                    <ul class="small text-muted">
-                        <li>Pihak berkepentingan yang relevan dengan sistem manajemen K3</li>
-                        <li>Kebutuhan dan harapan yang relevan dari pihak berkepentingan ini</li>
-                        <li>Yang mana dari kebutuhan dan harapan ini menjadi persyaratan wajib</li>
-                    </ul>
-                </p>
+
+                <div class="req-item p-3 mb-2 rounded">
+                    <h6 class="fw-bold small">4.2 Memahami kebutuhan dan harapan pekerja</h6>
+                    <p class="small text-muted mb-2">Organisasi harus menentukan pekerja dan pihak lain yang berkepentingan yang relevan dengan sistem manajemen K3, dan kebutuhan serta harapan yang relevan dari pekerja dan pihak berkepentingan ini.</p>
+                    <div class="d-flex flex-wrap gap-1">
+                        <span class="badge imp-badge small">Implementasi: Survei Kebutuhan, FGD</span>
+                        <span class="badge doc-badge small">Dokumen: Daftar Pihak Berkepentingan</span>
+                    </div>
+                </div>
+
+                <div class="req-item p-3 mb-2 rounded">
+                    <h6 class="fw-bold small">4.3 Menentukan ruang lingkup sistem manajemen K3</h6>
+                    <p class="small text-muted mb-2">Organisasi harus menentukan batasan dan kesesuaian sistem manajemen K3 untuk menetapkan ruang lingkupnya.</p>
+                    <div class="d-flex flex-wrap gap-1">
+                        <span class="badge imp-badge small">Implementasi: Workshop Penentuan Scope</span>
+                        <span class="badge doc-badge small">Dokumen: Pernyataan Ruang Lingkup</span>
+                    </div>
+                </div>
+
+                <div class="req-item p-3 rounded">
+                    <h6 class="fw-bold small">4.4 Sistem manajemen K3</h6>
+                    <p class="small text-muted mb-2">Organisasi harus menetapkan, menerapkan, memelihara, dan terus meningkatkan sistem manajemen K3 termasuk proses yang diperlukan dan interaksinya.</p>
+                    <div class="d-flex flex-wrap gap-1">
+                        <span class="badge imp-badge small">Implementasi: Pemetaan Proses</span>
+                        <span class="badge doc-badge small">Dokumen: Peta Proses K3</span>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="clause-card card shadow-sm mb-4">
+        <!-- Implementation Guidance -->
+        <div class="content-card card shadow-sm mb-4">
             <div class="card-body">
-                <div class="d-flex align-items-center mb-3">
-                    <div class="clause-icon bg-primary bg-opacity-10 text-primary me-3">
-                        <i class="bi bi-geo-alt fs-5"></i>
+                <h5 class="card-title fw-bold text-primary">Panduan Implementasi</h5>
+                
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item border-0 mb-2 rounded-3 overflow-hidden">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed bg-primary-light small fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                <i class="bi bi-check-circle-fill text-primary me-2"></i>Langkah 1: Analisis Konteks Organisasi
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body small">
+                                <ul>
+                                    <li>Identifikasi isu eksternal (peraturan, kondisi pasar, sosial budaya)</li>
+                                    <li>Identifikasi isu internal (budaya organisasi, struktur, sumber daya)</li>
+                                    <li>Gunakan alat analisis seperti PESTEL (Politik, Ekonomi, Sosial, Teknologi, Lingkungan, Legal) dan SWOT</li>
+                                    <li>Dokumentasikan hasil analisis dalam <strong>Laporan Analisis Konteks</strong></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <h5 class="fw-bold mb-0">4.3 Menentukan Ruang Lingkup Sistem Manajemen K3</h5>
+
+                    <div class="accordion-item border-0 mb-2 rounded-3 overflow-hidden">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed bg-primary-light small fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                <i class="bi bi-check-circle-fill text-primary me-2"></i>Langkah 2: Identifikasi Pihak Berkepentingan
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body small">
+                                <ul>
+                                    <li>Buat daftar semua pihak yang terkena dampak atau memengaruhi K3</li>
+                                    <li>Kategorikan berdasarkan tingkat pengaruh dan kepentingan</li>
+                                    <li>Identifikasi kebutuhan dan harapan masing-masing pihak</li>
+                                    <li>Dokumentasikan dalam <strong>Daftar Pihak Berkepentingan</strong> dan <strong>Matriks Kebutuhan</strong></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item border-0 rounded-3 overflow-hidden">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed bg-primary-light small fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                <i class="bi bi-check-circle-fill text-primary me-2"></i>Langkah 3: Penetapan Ruang Lingkup
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body small">
+                                <ul>
+                                    <li>Tentukan batasan fisik dan organisasi</li>
+                                    <li>Identifikasi aktivitas, produk, dan layanan yang termasuk</li>
+                                    <li>Pertimbangkan kewajiban hukum dan persyaratan lainnya</li>
+                                    <li>Buat <strong>Pernyataan Ruang Lingkup</strong> yang disetujui manajemen</li>
+                                    <li>Pastikan ruang lingkup tersedia sebagai informasi terdokumentasi</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <p class="small text-muted">
-                    Organisasi harus menentukan batasan dan penerapan sistem manajemen K3 untuk menetapkan ruang lingkupnya. Ketika menentukan ruang lingkup ini, organisasi harus mempertimbangkan:
-                    <ul class="small text-muted">
-                        <li>Masalah eksternal dan internal</li>
-                        <li>Persyaratan wajib</li>
-                        <li>Aktivitas, produk dan jasa yang terkait</li>
-                    </ul>
-                </p>
             </div>
         </div>
 
-        <div class="clause-card card shadow-sm mb-4">
+        <!-- Documentation Section -->
+        <div class="content-card card shadow-sm">
             <div class="card-body">
-                <div class="d-flex align-items-center mb-3">
-                    <div class="clause-icon bg-primary bg-opacity-10 text-primary me-3">
-                        <i class="bi bi-gear fs-5"></i>
+                <h5 class="card-title fw-bold text-primary mb-3">Dokumentasi yang Diperlukan</h5>
+                
+                <div class="doc-item d-flex align-items-start mb-3">
+                    <div class="me-2 mt-1">
+                        <i class="bi bi-file-earmark-text-fill text-primary"></i>
                     </div>
-                    <h5 class="fw-bold mb-0">4.4 Sistem Manajemen K3</h5>
+                    <div>
+                        <h6 class="fw-bold small mb-1">Laporan Analisis Konteks Organisasi</h6>
+                        <p class="small text-muted mb-1">Mencakup isu eksternal dan internal yang memengaruhi K3</p>
+                        <span class="badge bg-light text-dark small">Dokumen Wajib</span>
+                    </div>
                 </div>
-                <p class="small text-muted">
-                    Organisasi harus menetapkan, menerapkan, memelihara dan terus meningkatkan sistem manajemen K3, termasuk proses yang diperlukan dan interaksinya, sesuai dengan persyaratan standar internasional ini.
-                </p>
+
+                <div class="doc-item d-flex align-items-start mb-3">
+                    <div class="me-2 mt-1">
+                        <i class="bi bi-file-earmark-text-fill text-primary"></i>
+                    </div>
+                    <div>
+                        <h6 class="fw-bold small mb-1">Daftar Pihak Berkepentingan</h6>
+                        <p class="small text-muted mb-1">Daftar lengkap pihak terkait dengan kebutuhan dan harapannya</p>
+                        <span class="badge bg-light text-dark small">Dokumen Wajib</span>
+                    </div>
+                </div>
+
+                <div class="doc-item d-flex align-items-start mb-3">
+                    <div class="me-2 mt-1">
+                        <i class="bi bi-file-earmark-text-fill text-primary"></i>
+                    </div>
+                    <div>
+                        <h6 class="fw-bold small mb-1">Pernyataan Ruang Lingkup</h6>
+                        <p class="small text-muted mb-1">Dokumen resmi yang mendefinisikan batasan penerapan SMK3</p>
+                        <span class="badge bg-light text-dark small">Dokumen Wajib</span>
+                    </div>
+                </div>
+
+                <div class="doc-item d-flex align-items-start">
+                    <div class="me-2 mt-1">
+                        <i class="bi bi-file-earmark-text text-muted"></i>
+                    </div>
+                    <div>
+                        <h6 class="fw-bold small mb-1">Peta Proses K3</h6>
+                        <p class="small text-muted mb-1">Diagram yang menunjukkan interaksi proses dalam SMK3</p>
+                        <span class="badge bg-light text-dark small">Dokumen Pendukung</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -134,21 +233,20 @@
     <!-- Fixed Footer -->
     <footer class="fixed-bottom bg-white py-2 border-top">
         <div class="container text-center">
-            <p class="small text-muted mb-0">2025. ISR Project</p>
+            <p class="small text-muted mb-0">Klausul 4 - Konteks Organisasi</p>
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Mobile touch feedback
-        document.querySelectorAll('.clause-card').forEach(card => {
-            card.addEventListener('touchstart', function() {
+        // Enhanced mobile touch feedback
+        document.querySelectorAll('.req-item').forEach(item => {
+            item.addEventListener('touchstart', function() {
                 this.style.transform = 'scale(0.98)';
-                this.style.opacity = '0.9';
             });
             
-            card.addEventListener('touchend', function() {
+            item.addEventListener('touchend', function() {
                 this.style.transform = '';
-                this.style.opacity = '';
             });
         });
     </script>
