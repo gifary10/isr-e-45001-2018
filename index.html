@@ -54,6 +54,21 @@
     </style>
 </head>
 <body>
+    <!-- Login Check -->
+    <script>
+        // Check if user is logged in by looking for a session token or flag
+        function checkLogin() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+            if (!isLoggedIn || isLoggedIn !== 'true') {
+                // Redirect to login page if not logged in
+                window.location.href = 'https://gifary10.github.io/isr-login-access';
+            }
+        }
+        
+        // Run the check when page loads
+        window.onload = checkLogin;
+    </script>
+
     <div class="container px-3 py-3">
         <!-- Header with Logo -->
         <div class="text-center mb-3">
@@ -238,6 +253,9 @@
                 this.style.transition = 'all 0.2s ease';
             });
         });
+        
+        // Check login status on page load
+        checkLogin();
     </script>
 </body>
 </html>
