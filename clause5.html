@@ -2,95 +2,279 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Klausul 5 - Kepemimpinan dan Partisipasi Pekerja | ISO 45001:2018</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Klausul 5 - Kepemimpinan | ISO 45001</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary: #f97316;
+            --primary-light: #ffedd5;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f8fafc;
+            -webkit-tap-highlight-color: transparent;
+            padding-bottom: 60px;
+        }
+        .nav-back {
+            background-color: white;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .content-card {
+            border-radius: 14px;
+            border: none;
+        }
+        .req-item {
+            border-left: 3px solid var(--primary);
+            transition: all 0.2s ease;
+        }
+        .req-item:hover {
+            background-color: var(--primary-light);
+        }
+        .doc-badge {
+            background-color: var(--primary-light);
+            color: var(--primary);
+        }
+        .imp-badge {
+            background-color: #e0f2fe;
+            color: #0369a1;
+        }
+        .leader-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary-light);
+            color: var(--primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar bg-dark">
+    <!-- Header -->
+    <nav class="nav-back navbar sticky-top px-3 py-2">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
-                <img src="logop.png" alt="Logo ISR" width="100" height="45">
+            <a href="index.html" class="text-decoration-none">
+                <i class="bi bi-arrow-left text-dark fs-5 me-2"></i>
             </a>
+            <div class="navbar-brand fs-6 text-dark fw-bold">
+                Klausul 5: Kepemimpinan & Partisipasi
+            </div>
+            <div class="d-flex">
+                <i class="bi bi-info-circle text-primary fs-5"></i>
+            </div>
         </div>
     </nav>
-  
-    <div class="header text-center">
-        <div class="container">
-            <h1 class="display-5 fw-bold">ISO 45001:2018</h1>
-            <p class="lead">Sistem Manajemen Keselamatan dan Kesehatan Kerja</p>
-        </div>
-    </div>
 
-    <div class="container">
-        <div class="text-center">
-            <select class="form-select nav-select" id="clauseSelector">
-                <option value="">-- Pilih Klausul --</option>
-                <option value="clause4.html">4. Konteks Organisasi</option>
-                <option value="clause5.html" selected>5. Kepemimpinan dan Partisipasi Pekerja</option>
-                <option value="clause6.html">6. Perencanaan</option>
-                <option value="clause7.html">7. Dukungan</option>
-                <option value="clause8.html">8. Operasi</option>
-                <option value="clause9.html">9. Evaluasi Kinerja</option>
-                <option value="clause10.html">10. Peningkatan</option>
-            </select>
+    <div class="container px-3 py-3">
+        <!-- Leadership Visual -->
+        <div class="content-card card shadow-sm mb-4 text-center py-4">
+            <div class="leader-icon">
+                <i class="bi bi-people-fill fs-4"></i>
+            </div>
+            <h5 class="fw-bold text-primary">Kepemimpinan & Komitmen</h5>
+            <p class="small px-3">Manajemen puncak harus menunjukkan kepemimpinan dan komitmen terhadap sistem manajemen K3 dengan memastikan kebijakan dan tujuan ditetapkan serta sesuai dengan arah strategis organisasi.</p>
         </div>
 
-        <div class="clause-container">
-            <div id="clause5" class="clause-content">
-                <h2 class="d-flex align-items-center">
-                    <span class="badge clause-badge rounded-pill me-2">5</span>
-                    Kepemimpinan dan Partisipasi Pekerja
-                </h2>
+        <!-- Requirements Section -->
+        <div class="content-card card shadow-sm mb-4">
+            <div class="card-body">
+                <h5 class="card-title fw-bold text-primary mb-3">Persyaratan Klausul 5</h5>
                 
-                <!-- Konten klausul 5 disini (sama seperti di file asli) -->
-                <div class="sub-clause">
-                    <h4>5.1 Kepemimpinan dan komitmen</h4>
-                    <div class="sub-sub-clause">
-                        <h5>5.1.1 Umum</h5>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="implementasi-box">
-                                    <h6 class="h6 implementasi-title">Implementasi:</h6>
-                                    <ul>
-                                        <li>Demonstrasi komitmen manajemen</li>
-                                        <li>Integrasi K3 dengan strategi bisnis</li>
-                                        <li>Penyediaan sumber daya</li>
-                                        <li>Penetapan kebijakan K3</li>
-                                        <li>Penetapan peran dan tanggung jawab</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <h6 class="h6 document-title">Dokumen:</h6>
-                                <ul class="document-list">
-                                    <li>Kebijakan K3</li>
-                                    <li>Catatan Rapat Manajemen</li>
-                                    <li>Dokumen Alokasi Sumber Daya</li>
-                                    <li>Struktur Organisasi K3</li>
-                                    <li>Matriks Tanggung Jawab</li>
-                                </ul>
-                            </div>
+                <div class="req-item p-3 mb-2 rounded">
+                    <h6 class="fw-bold small">5.1 Kepemimpinan dan komitmen</h6>
+                    <p class="small text-muted mb-2">Manajemen puncak harus menunjukkan kepemimpinan dan komitmen dengan memastikan tanggung jawab dan akuntabilitas untuk K3 didelegasikan dengan tepat.</p>
+                    <div class="d-flex flex-wrap gap-1">
+                        <span class="badge imp-badge small">Implementasi: Deklarasi Manajemen</span>
+                        <span class="badge doc-badge small">Dokumen: Struktur Tanggung Jawab</span>
+                    </div>
+                </div>
+
+                <div class="req-item p-3 mb-2 rounded">
+                    <h6 class="fw-bold small">5.2 Kebijakan K3</h6>
+                    <p class="small text-muted mb-2">Manajemen puncak harus menetapkan, menerapkan, dan memelihara kebijakan K3 yang menyediakan kerangka kerja untuk menetapkan tujuan K3.</p>
+                    <div class="d-flex flex-wrap gap-1">
+                        <span class="badge imp-badge small">Implementasi: Penyusunan Kebijakan</span>
+                        <span class="badge doc-badge small">Dokumen: Kebijakan K3</span>
+                    </div>
+                </div>
+
+                <div class="req-item p-3 mb-2 rounded">
+                    <h6 class="fw-bold small">5.3 Peran, tanggung jawab dan wewenang organisasi</h6>
+                    <p class="small text-muted mb-2">Manajemen puncak harus memastikan bahwa peran, tanggung jawab, dan wewenang untuk posisi yang relevan ditetapkan, dikomunikasikan, dan dipahami.</p>
+                    <div class="d-flex flex-wrap gap-1">
+                        <span class="badge imp-badge small">Implementasi: Workshop Penugasan</span>
+                        <span class="badge doc-badge small">Dokumen: Matriks Tanggung Jawab</span>
+                    </div>
+                </div>
+
+                <div class="req-item p-3 rounded">
+                    <h6 class="fw-bold small">5.4 Partisipasi dan konsultasi pekerja</h6>
+                    <p class="small text-muted mb-2">Organisasi harus menyediakan mekanisme untuk partisipasi dan konsultasi pekerja pada semua tingkatan dalam pengembangan sistem manajemen K3.</p>
+                    <div class="d-flex flex-wrap gap-1">
+                        <span class="badge imp-badge small">Implementasi: Pembentukan P2K3</span>
+                        <span class="badge doc-badge small">Dokumen: Prosedur Partisipasi</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Implementation Guidance -->
+        <div class="content-card card shadow-sm mb-4">
+            <div class="card-body">
+                <h5 class="card-title fw-bold text-primary mb-3">Panduan Implementasi</h5>
+                
+                <div class="d-flex align-items-start mb-3">
+                    <div class="me-3 mt-1">
+                        <div class="bg-primary-light text-primary rounded-circle p-2" style="width:32px;height:32px;line-height:18px;text-align:center;">
+                            <i class="bi bi-1-circle"></i>
                         </div>
                     </div>
-                    
-                    <!-- Sub-klausul lainnya... -->
-                    
+                    <div>
+                        <h6 class="fw-bold small">Komitmen Manajemen</h6>
+                        <p class="small text-muted">Manajemen puncak harus mengalokasikan sumber daya yang diperlukan dan secara aktif terlibat dalam:
+                            <ul class="small text-muted">
+                                <li>Menetapkan kebijakan K3</li>
+                                <li>Memastikan integrasi K3 dengan proses bisnis</li>
+                                <li>Mendukung personil untuk berkontribusi pada sistem K3</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-start mb-3">
+                    <div class="me-3 mt-1">
+                        <div class="bg-primary-light text-primary rounded-circle p-2" style="width:32px;height:32px;line-height:18px;text-align:center;">
+                            <i class="bi bi-2-circle"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h6 class="fw-bold small">Penyusunan Kebijakan K3</h6>
+                        <p class="small text-muted">Kebijakan harus:
+                            <ul class="small text-muted">
+                                <li>Jelas dan sesuai dengan konteks organisasi</li>
+                                <li>Mencakup komitmen untuk memenuhi persyaratan</li>
+                                <li>Mencakup komitmen untuk peningkatan berkelanjutan</li>
+                                <li>Didokumentasikan, dikomunikasikan, dan tersedia</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-start mb-3">
+                    <div class="me-3 mt-1">
+                        <div class="bg-primary-light text-primary rounded-circle p-2" style="width:32px;height:32px;line-height:18px;text-align:center;">
+                            <i class="bi bi-3-circle"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h6 class="fw-bold small">Struktur Organisasi K3</h6>
+                        <p class="small text-muted">Langkah-langkah implementasi:
+                            <ul class="small text-muted">
+                                <li>Buat bagan organisasi K3</li>
+                                <li>Tetapkan penanggung jawab khusus (K3 Officer)</li>
+                                <li>Definisikan tanggung jawab semua level manajemen</li>
+                                <li>Komunikasikan kepada seluruh karyawan</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-start">
+                    <div class="me-3 mt-1">
+                        <div class="bg-primary-light text-primary rounded-circle p-2" style="width:32px;height:32px;line-height:18px;text-align:center;">
+                            <i class="bi bi-4-circle"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h6 class="fw-bold small">Partisipasi Pekerja</h6>
+                        <p class="small text-muted">Mekanisme yang dapat dibentuk:
+                            <ul class="small text-muted">
+                                <li>Panitia Pembina Keselamatan dan Kesehatan Kerja (P2K3)</li>
+                                <li>Forum konsultasi bulanan</li>
+                                <li>Sistem saran K3</li>
+                                <li>Pelibatan dalam tinjauan risiko</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Documentation Section -->
+        <div class="content-card card shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title fw-bold text-primary mb-3">Dokumentasi yang Diperlukan</h5>
+                
+                <div class="doc-item d-flex align-items-start mb-3">
+                    <div class="me-2 mt-1">
+                        <i class="bi bi-file-earmark-text-fill text-primary"></i>
+                    </div>
+                    <div>
+                        <h6 class="fw-bold small mb-1">Kebijakan K3</h6>
+                        <p class="small text-muted mb-1">Dokumen formal yang ditandatangani manajemen puncak</p>
+                        <span class="badge bg-light text-dark small">Dokumen Wajib</span>
+                    </div>
+                </div>
+
+                <div class="doc-item d-flex align-items-start mb-3">
+                    <div class="me-2 mt-1">
+                        <i class="bi bi-file-earmark-text-fill text-primary"></i>
+                    </div>
+                    <div>
+                        <h6 class="fw-bold small mb-1">Struktur Organisasi K3</h6>
+                        <p class="small text-muted mb-1">Menunjukkan hierarki dan tanggung jawab K3</p>
+                        <span class="badge bg-light text-dark small">Dokumen Wajib</span>
+                    </div>
+                </div>
+
+                <div class="doc-item d-flex align-items-start mb-3">
+                    <div class="me-2 mt-1">
+                        <i class="bi bi-file-earmark-text-fill text-primary"></i>
+                    </div>
+                    <div>
+                        <h6 class="fw-bold small mb-1">Daftar Anggota P2K3</h6>
+                        <p class="small text-muted mb-1">Susunan personalia dan peran dalam panitia</p>
+                        <span class="badge bg-light text-dark small">Dokumen Wajib</span>
+                    </div>
+                </div>
+
+                <div class="doc-item d-flex align-items-start">
+                    <div class="me-2 mt-1">
+                        <i class="bi bi-file-earmark-text text-muted"></i>
+                    </div>
+                    <div>
+                        <h6 class="fw-bold small mb-1">Berita Acara Sosialisasi</h6>
+                        <p class="small text-muted mb-1">Dokumentasi komunikasi kebijakan ke seluruh karyawan</p>
+                        <span class="badge bg-light text-dark small">Dokumen Pendukung</span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <footer class="footer">
+    <!-- Fixed Footer -->
+    <footer class="fixed-bottom bg-white py-2 border-top">
         <div class="container text-center">
-            <img src="logop.png" alt="Logo ISR" width="60" height="27">
-            <p class="mb-0">Integrated Safety Report © 2025</p>
+            <p class="small text-muted mb-0">Klausul 5 - Kepemimpinan & Partisipasi</p>
         </div>
     </footer>
 
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/script.js"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Enhanced mobile touch feedback
+        document.querySelectorAll('.req-item').forEach(item => {
+            item.addEventListener('touchstart', function() {
+                this.style.transform = 'scale(0.98)';
+            });
+            
+            item.addEventListener('touchend', function() {
+                this.style.transform = '';
+            });
+        });
+    </script>
 </body>
 </html>
