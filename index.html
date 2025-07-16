@@ -11,26 +11,36 @@
 </head>
 <body>
     <!-- Navbar dengan logo di kiri atas -->
-    <nav class="navbar bg-dark">
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="logop.png" alt="Logo ISR" width="100" height="45">
+                <img src="logop.png" alt="Logo ISR" width="100" height="45" class="d-inline-block align-text-top">
             </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
   
     <!-- Header -->
-    <div class="header text-center">
+    <header class="header bg-primary text-white py-5">
         <div class="container">
             <h1 class="display-5 fw-bold">ISO 45001:2018</h1>
             <p class="lead">Sistem Manajemen Keselamatan dan Kesehatan Kerja</p>
         </div>
-    </div>
+    </header>
 
-    <div class="container">
+    <main class="container my-5">
         <!-- Dropdown Navigasi -->
-        <div class="text-center">
-            <select class="form-select nav-select" id="clauseSelector">
+        <div class="text-center mb-4">
+            <select class="form-select nav-select mx-auto" id="clauseSelector" style="max-width: 400px;">
                 <option value="">-- Pilih Klausul --</option>
                 <option value="clause4.html">4. Konteks Organisasi</option>
                 <option value="clause5.html">5. Kepemimpinan dan Partisipasi Pekerja</option>
@@ -43,16 +53,16 @@
         </div>
 
         <!-- Container untuk konten default -->
-        <div class="clause-container text-center py-5">
+        <section class="clause-container text-center py-5 border rounded bg-light">
             <h4>Silakan pilih klausul dari dropdown di atas</h4>
             <p class="text-muted">Konten implementasi dan dokumen yang diperlukan akan ditampilkan di halaman masing-masing klausul</p>
-        </div>
-    </div>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer bg-dark text-white py-3 mt-5">
         <div class="container text-center">
-            <img src="logop.png" alt="Logo ISR" width="60" height="27">
+            <img src="logop.png" alt="Logo ISR" width="60" height="27" class="mb-2">
             <p class="mb-0">Integrated Safety Report © 2025</p>
         </div>
     </footer>
@@ -61,6 +71,13 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
     <script src="js/script.js"></script>
-
+    <script>
+        // Script untuk navigasi dropdown
+        document.getElementById('clauseSelector').addEventListener('change', function() {
+            if (this.value) {
+                window.location.href = this.value;
+            }
+        });
+    </script>
 </body>
 </html>
