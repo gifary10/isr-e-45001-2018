@@ -3,223 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistem K3 ISO 45001:2018</title>
+    <title>Klausul ISO 45001:2018</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-        }
         body {
-            padding-top: 60px;
-            padding-bottom: 60px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        .nav-select {
-            cursor: pointer;
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', system-ui, sans-serif;
         }
         .clause-card {
-            transition: transform 0.2s;
-            border-radius: 10px;
+            transition: all 0.3s ease;
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
         }
         .clause-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
-        .quick-link {
-            text-decoration: none;
+        .clause-icon {
+            font-size: 1.75rem;
+            background: rgba(13, 110, 253, 0.1);
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        .bottom-nav {
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+        .clause-bg {
+            height: 100px;
+            background: linear-gradient(135deg, #0d6efd 0%, #0b5ed7 100%);
         }
     </style>
 </head>
 <body>
-    <!-- Simplified Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#">
-                <i class="bi bi-shield-check"></i> K3 System
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#"><i class="bi bi-house"></i> Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="bi bi-question-circle"></i> Bantuan</a>
-                    </li>
-                </ul>
+    <!-- Main Content Only -->
+    <div class="container py-4">
+        <!-- Header -->
+        <div class="text-center mb-5">
+            <div class="clause-bg rounded-3 d-flex align-items-center justify-content-center mb-4">
+                <h2 class="text-white m-0">ISO 45001:2018</h2>
             </div>
-        </div>
-    </nav>
-
-    <!-- Streamlined Header -->
-    <header class="bg-light py-4">
-        <div class="container text-center">
-            <h1 class="h3 fw-bold text-primary">ISO 45001:2018</h1>
-            <p class="text-muted">Sistem Manajemen Keselamatan & Kesehatan Kerja</p>
-        </div>
-    </header>
-
-    <!-- Main Content -->
-    <main class="container my-4">
-        <!-- Interactive Search/Select -->
-        <div class="mb-4">
-            <div class="input-group shadow-sm">
-                <span class="input-group-text bg-white border-end-0">
-                    <i class="bi bi-search text-muted"></i>
-                </span>
-                <input type="text" class="form-control border-start-0" placeholder="Cari klausul atau dokumen...">
-                <button class="btn btn-primary">Cari</button>
-            </div>
+            <p class="text-muted">Pilih klausul untuk melihat detail</p>
         </div>
 
-        <!-- Quick Access Cards -->
-        <div class="row g-3 mb-4">
-            <div class="col-6 col-md-3">
-                <a href="clause4.html" class="quick-link">
-                    <div class="card clause-card h-100 text-center border-0 shadow-sm">
-                        <div class="card-body">
-                            <div class="bg-primary bg-opacity-10 rounded-circle p-3 d-inline-block mb-3">
-                                <i class="bi bi-building fs-4 text-primary"></i>
-                            </div>
-                            <h6 class="fw-bold">Klausul 4</h6>
-                            <p class="small text-muted">Konteks Organisasi</p>
+        <!-- Clause Cards -->
+        <div class="row g-4">
+            <!-- Klausul 4 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="clause-card card h-100 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="clause-icon text-primary mx-auto mb-4">
+                            <i class="bi bi-building"></i>
                         </div>
+                        <h5 class="fw-bold mb-3">Klausul 4</h5>
+                        <p class="text-muted">Konteks Organisasi</p>
+                        <button class="btn btn-outline-primary rounded-pill px-4 mt-2">Buka</button>
                     </div>
-                </a>
+                </div>
             </div>
-            <div class="col-6 col-md-3">
-                <a href="clause5.html" class="quick-link">
-                    <div class="card clause-card h-100 text-center border-0 shadow-sm">
-                        <div class="card-body">
-                            <div class="bg-primary bg-opacity-10 rounded-circle p-3 d-inline-block mb-3">
-                                <i class="bi bi-people fs-4 text-primary"></i>
-                            </div>
-                            <h6 class="fw-bold">Klausul 5</h6>
-                            <p class="small text-muted">Kepemimpinan</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-6 col-md-3">
-                <a href="clause6.html" class="quick-link">
-                    <div class="card clause-card h-100 text-center border-0 shadow-sm">
-                        <div class="card-body">
-                            <div class="bg-primary bg-opacity-10 rounded-circle p-3 d-inline-block mb-3">
-                                <i class="bi bi-calendar-check fs-4 text-primary"></i>
-                            </div>
-                            <h6 class="fw-bold">Klausul 6</h6>
-                            <p class="small text-muted">Perencanaan</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-6 col-md-3">
-                <a href="clause7.html" class="quick-link">
-                    <div class="card clause-card h-100 text-center border-0 shadow-sm">
-                        <div class="card-body">
-                            <div class="bg-primary bg-opacity-10 rounded-circle p-3 d-inline-block mb-3">
-                                <i class="bi bi-tools fs-4 text-primary"></i>
-                            </div>
-                            <h6 class="fw-bold">Klausul 7</h6>
-                            <p class="small text-muted">Dukungan</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
 
-        <!-- Recent Activity -->
-        <div class="card border-0 shadow-sm mb-4">
-            <div class="card-header bg-white border-0">
-                <h5 class="fw-bold mb-0"><i class="bi bi-clock-history text-primary"></i> Aktivitas Terakhir</h5>
+            <!-- Klausul 5 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="clause-card card h-100 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="clause-icon text-primary mx-auto mb-4">
+                            <i class="bi bi-people-fill"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3">Klausul 5</h5>
+                        <p class="text-muted">Kepemimpinan & Partisipasi</p>
+                        <button class="btn btn-outline-primary rounded-pill px-4 mt-2">Buka</button>
+                    </div>
+                </div>
             </div>
-            <div class="card-body">
-                <div class="list-group list-group-flush">
-                    <a href="#" class="list-group-item list-group-item-action border-0 py-3">
-                        <div class="d-flex align-items-center">
-                            <div class="bg-primary bg-opacity-10 rounded-circle p-2 me-3">
-                                <i class="bi bi-file-earmark-text text-primary"></i>
-                            </div>
-                            <div>
-                                <h6 class="mb-1 fw-bold">Dokumen Kebijakan K3</h6>
-                                <small class="text-muted">Diakses 2 jam lalu</small>
-                            </div>
+
+            <!-- Klausul 6 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="clause-card card h-100 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="clause-icon text-primary mx-auto mb-4">
+                            <i class="bi bi-calendar-check"></i>
                         </div>
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action border-0 py-3">
-                        <div class="d-flex align-items-center">
-                            <div class="bg-primary bg-opacity-10 rounded-circle p-2 me-3">
-                                <i class="bi bi-clipboard-check text-primary"></i>
-                            </div>
-                            <div>
-                                <h6 class="mb-1 fw-bold">Form Inspeksi</h6>
-                                <small class="text-muted">Diakses kemarin</small>
-                            </div>
+                        <h5 class="fw-bold mb-3">Klausul 6</h5>
+                        <p class="text-muted">Perencanaan</p>
+                        <button class="btn btn-outline-primary rounded-pill px-4 mt-2">Buka</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Klausul 7 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="clause-card card h-100 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="clause-icon text-primary mx-auto mb-4">
+                            <i class="bi bi-tools"></i>
                         </div>
-                    </a>
+                        <h5 class="fw-bold mb-3">Klausul 7</h5>
+                        <p class="text-muted">Dukungan</p>
+                        <button class="btn btn-outline-primary rounded-pill px-4 mt-2">Buka</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Klausul 8 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="clause-card card h-100 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="clause-icon text-primary mx-auto mb-4">
+                            <i class="bi bi-gear"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3">Klausul 8</h5>
+                        <p class="text-muted">Operasi</p>
+                        <button class="btn btn-outline-primary rounded-pill px-4 mt-2">Buka</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Klausul 9 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="clause-card card h-100 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="clause-icon text-primary mx-auto mb-4">
+                            <i class="bi bi-graph-up"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3">Klausul 9</h5>
+                        <p class="text-muted">Evaluasi Kinerja</p>
+                        <button class="btn btn-outline-primary rounded-pill px-4 mt-2">Buka</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </main>
-
-    <!-- Bottom Navigation -->
-    <nav class="navbar bottom-nav navbar-light bg-white fixed-bottom d-lg-none">
-        <div class="container">
-            <div class="d-flex justify-content-around w-100">
-                <a href="#" class="nav-link text-center text-primary">
-                    <i class="bi bi-house fs-5 d-block mx-auto"></i>
-                    <small>Home</small>
-                </a>
-                <a href="#" class="nav-link text-center text-muted">
-                    <i class="bi bi-search fs-5 d-block mx-auto"></i>
-                    <small>Cari</small>
-                </a>
-                <a href="#" class="nav-link text-center text-muted">
-                    <i class="bi bi-bookmark fs-5 d-block mx-auto"></i>
-                    <small>Favorit</small>
-                </a>
-                <a href="#" class="nav-link text-center text-muted">
-                    <i class="bi bi-person fs-5 d-block mx-auto"></i>
-                    <small>Profil</small>
-                </a>
-            </div>
-        </div>
-    </nav>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Simple interactive enhancements
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add hover effect to cards
-            const cards = document.querySelectorAll('.clause-card');
-            cards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.style.boxShadow = '0 8px 20px rgba(0,0,0,0.1)';
-                });
-                card.addEventListener('mouseleave', function() {
-                    this.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
-                });
+        // Simple interactive effects
+        document.querySelectorAll('.clause-card').forEach(card => {
+            // Click effect
+            card.addEventListener('click', function() {
+                // Add ripple effect
+                const ripple = document.createElement('span');
+                ripple.className = 'ripple-effect';
+                this.appendChild(ripple);
+                
+                // Remove ripple after animation
+                setTimeout(() => ripple.remove(), 600);
+                
+                // In a real app, this would navigate to the clause page
+                console.log('Opening clause:', this.querySelector('h5').textContent);
             });
             
-            // Mobile tap effect
-            if (window.innerWidth < 992) {
-                cards.forEach(card => {
-                    card.style.transition = 'none';
-                    card.addEventListener('touchstart', function() {
-                        this.style.transform = 'scale(0.98)';
-                    });
-                    card.addEventListener('touchend', function() {
-                        this.style.transform = 'scale(1)';
-                    });
-                });
-            }
+            // Mobile touch effect
+            card.addEventListener('touchstart', function() {
+                this.style.transform = 'scale(0.98)';
+            });
+            
+            card.addEventListener('touchend', function() {
+                this.style.transform = '';
+            });
         });
     </script>
 </body>
