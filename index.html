@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>Klausul K3</title>
+    <title>ISO 45001:2018 - Sistem K3</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <style>
@@ -15,6 +15,7 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background-color: #f8fafc;
             -webkit-tap-highlight-color: transparent;
+            padding-bottom: 60px;
         }
         .clause-card {
             border-radius: 14px;
@@ -34,126 +35,198 @@
             justify-content: center;
             margin: 0 auto 16px;
         }
+        .logo-img {
+            height: 40px;
+        }
+        .intro-box {
+            background-color: #f1f5f9;
+            border-radius: 14px;
+        }
     </style>
 </head>
 <body>
-    <div class="container px-3 py-4">
-        <!-- Header -->
-        <div class="text-center mb-4">
-            <h4 class="fw-bold text-dark mb-2">ISO 45001:2018</h4>
+    <div class="container px-3 py-3">
+        <!-- Header with Logo -->
+        <div class="text-center mb-3">
+            <img src="logop.png" alt="ISO 45001" class="logo-img mb-2">
+            <h5 class="fw-bold text-dark mb-1">ISO 45001:2018</h5>
             <p class="text-muted small">Sistem Manajemen K3</p>
         </div>
 
-        <!-- Clause List -->
-        <div class="row g-3">
-            <!-- Klausul 4 -->
-            <div class="col-6">
-                <a href="#klausul4" class="text-decoration-none">
-                    <div class="clause-card card h-100 shadow-sm p-3">
-                        <div class="card-body text-center p-0">
-                            <div class="clause-icon bg-primary bg-opacity-10 text-primary">
-                                <i class="bi bi-building fs-5"></i>
-                            </div>
-                            <h6 class="fw-bold mb-1">Klausul 4</h6>
-                            <p class="text-muted small mb-0">Konteks Organisasi</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Klausul 5 -->
-            <div class="col-6">
-                <a href="#klausul5" class="text-decoration-none">
-                    <div class="clause-card card h-100 shadow-sm p-3">
-                        <div class="card-body text-center p-0">
-                            <div class="clause-icon bg-primary bg-opacity-10 text-primary">
-                                <i class="bi bi-people fs-5"></i>
-                            </div>
-                            <h6 class="fw-bold mb-1">Klausul 5</h6>
-                            <p class="text-muted small mb-0">Kepemimpinan</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Klausul 6 -->
-            <div class="col-6">
-                <a href="#klausul6" class="text-decoration-none">
-                    <div class="clause-card card h-100 shadow-sm p-3">
-                        <div class="card-body text-center p-0">
-                            <div class="clause-icon bg-primary bg-opacity-10 text-primary">
-                                <i class="bi bi-calendar-check fs-5"></i>
-                            </div>
-                            <h6 class="fw-bold mb-1">Klausul 6</h6>
-                            <p class="text-muted small mb-0">Perencanaan</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Klausul 7 -->
-            <div class="col-6">
-                <a href="#klausul7" class="text-decoration-none">
-                    <div class="clause-card card h-100 shadow-sm p-3">
-                        <div class="card-body text-center p-0">
-                            <div class="clause-icon bg-primary bg-opacity-10 text-primary">
-                                <i class="bi bi-tools fs-5"></i>
-                            </div>
-                            <h6 class="fw-bold mb-1">Klausul 7</h6>
-                            <p class="text-muted small mb-0">Dukungan</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Klausul 8 -->
-            <div class="col-6">
-                <a href="#klausul8" class="text-decoration-none">
-                    <div class="clause-card card h-100 shadow-sm p-3">
-                        <div class="card-body text-center p-0">
-                            <div class="clause-icon bg-primary bg-opacity-10 text-primary">
-                                <i class="bi bi-gear fs-5"></i>
-                            </div>
-                            <h6 class="fw-bold mb-1">Klausul 8</h6>
-                            <p class="text-muted small mb-0">Operasi</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Klausul 9 -->
-            <div class="col-6">
-                <a href="#klausul9" class="text-decoration-none">
-                    <div class="clause-card card h-100 shadow-sm p-3">
-                        <div class="card-body text-center p-0">
-                            <div class="clause-icon bg-primary bg-opacity-10 text-primary">
-                                <i class="bi bi-graph-up fs-5"></i>
-                            </div>
-                            <h6 class="fw-bold mb-1">Klausul 9</h6>
-                            <p class="text-muted small mb-0">Evaluasi</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
+        <!-- ISO 45001 Introduction -->
+        <div class="intro-box p-3 mb-4">
+            <p class="small mb-2 text-muted">
+                <strong class="text-primary">ISO 45001:2018</strong> adalah standar internasional untuk Sistem Manajemen 
+                Keselamatan dan Kesehatan Kerja (K3) yang membantu organisasi mengurangi risiko kecelakaan kerja 
+                dan penyakit akibat kerja, serta menciptakan tempat kerja yang lebih aman dan sehat.
+            </p>
         </div>
 
-        <!-- Simple Footer -->
-        <div class="text-center mt-5">
-            <p class="text-muted small">© 2023 Sistem K3</p>
+        <!-- Clause List -->
+        <div class="row g-2">
+            <!-- Klausul 1-10 -->
+            <div class="col-6">
+                <a href="#klausul1" class="text-decoration-none">
+                    <div class="clause-card card h-100 shadow-sm p-2">
+                        <div class="card-body text-center p-1">
+                            <div class="clause-icon bg-primary bg-opacity-10 text-primary">
+                                <i class="bi bi-1-circle fs-5"></i>
+                            </div>
+                            <h6 class="fw-bold mb-1 small">Klausul 1</h6>
+                            <p class="text-muted x-small mb-0">Ruang Lingkup</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-6">
+                <a href="#klausul2" class="text-decoration-none">
+                    <div class="clause-card card h-100 shadow-sm p-2">
+                        <div class="card-body text-center p-1">
+                            <div class="clause-icon bg-primary bg-opacity-10 text-primary">
+                                <i class="bi bi-2-circle fs-5"></i>
+                            </div>
+                            <h6 class="fw-bold mb-1 small">Klausul 2</h6>
+                            <p class="text-muted x-small mb-0">Acuan Normatif</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-6">
+                <a href="#klausul3" class="text-decoration-none">
+                    <div class="clause-card card h-100 shadow-sm p-2">
+                        <div class="card-body text-center p-1">
+                            <div class="clause-icon bg-primary bg-opacity-10 text-primary">
+                                <i class="bi bi-3-circle fs-5"></i>
+                            </div>
+                            <h6 class="fw-bold mb-1 small">Klausul 3</h6>
+                            <p class="text-muted x-small mb-0">Istilah & Definisi</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-6">
+                <a href="#klausul4" class="text-decoration-none">
+                    <div class="clause-card card h-100 shadow-sm p-2">
+                        <div class="card-body text-center p-1">
+                            <div class="clause-icon bg-primary bg-opacity-10 text-primary">
+                                <i class="bi bi-4-circle fs-5"></i>
+                            </div>
+                            <h6 class="fw-bold mb-1 small">Klausul 4</h6>
+                            <p class="text-muted x-small mb-0">Konteks Organisasi</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-6">
+                <a href="#klausul5" class="text-decoration-none">
+                    <div class="clause-card card h-100 shadow-sm p-2">
+                        <div class="card-body text-center p-1">
+                            <div class="clause-icon bg-primary bg-opacity-10 text-primary">
+                                <i class="bi bi-5-circle fs-5"></i>
+                            </div>
+                            <h6 class="fw-bold mb-1 small">Klausul 5</h6>
+                            <p class="text-muted x-small mb-0">Kepemimpinan</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-6">
+                <a href="#klausul6" class="text-decoration-none">
+                    <div class="clause-card card h-100 shadow-sm p-2">
+                        <div class="card-body text-center p-1">
+                            <div class="clause-icon bg-primary bg-opacity-10 text-primary">
+                                <i class="bi bi-6-circle fs-5"></i>
+                            </div>
+                            <h6 class="fw-bold mb-1 small">Klausul 6</h6>
+                            <p class="text-muted x-small mb-0">Perencanaan</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-6">
+                <a href="#klausul7" class="text-decoration-none">
+                    <div class="clause-card card h-100 shadow-sm p-2">
+                        <div class="card-body text-center p-1">
+                            <div class="clause-icon bg-primary bg-opacity-10 text-primary">
+                                <i class="bi bi-7-circle fs-5"></i>
+                            </div>
+                            <h6 class="fw-bold mb-1 small">Klausul 7</h6>
+                            <p class="text-muted x-small mb-0">Dukungan</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-6">
+                <a href="#klausul8" class="text-decoration-none">
+                    <div class="clause-card card h-100 shadow-sm p-2">
+                        <div class="card-body text-center p-1">
+                            <div class="clause-icon bg-primary bg-opacity-10 text-primary">
+                                <i class="bi bi-8-circle fs-5"></i>
+                            </div>
+                            <h6 class="fw-bold mb-1 small">Klausul 8</h6>
+                            <p class="text-muted x-small mb-0">Operasi</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-6">
+                <a href="#klausul9" class="text-decoration-none">
+                    <div class="clause-card card h-100 shadow-sm p-2">
+                        <div class="card-body text-center p-1">
+                            <div class="clause-icon bg-primary bg-opacity-10 text-primary">
+                                <i class="bi bi-9-circle fs-5"></i>
+                            </div>
+                            <h6 class="fw-bold mb-1 small">Klausul 9</h6>
+                            <p class="text-muted x-small mb-0">Evaluasi Kinerja</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-6">
+                <a href="#klausul10" class="text-decoration-none">
+                    <div class="clause-card card h-100 shadow-sm p-2">
+                        <div class="card-body text-center p-1">
+                            <div class="clause-icon bg-primary bg-opacity-10 text-primary">
+                                <i class="bi bi-0-circle fs-5"></i>
+                            </div>
+                            <h6 class="fw-bold mb-1 small">Klausul 10</h6>
+                            <p class="text-muted x-small mb-0">Peningkatan</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
 
+    <!-- Fixed Footer -->
+    <footer class="fixed-bottom bg-white py-2 border-top">
+        <div class="container text-center">
+            <p class="small text-muted mb-0">2025. ISR Project</p>
+        </div>
+    </footer>
+
     <script>
-        // Mobile touch feedback
+        // Enhanced mobile touch feedback
         document.querySelectorAll('.clause-card').forEach(card => {
             card.addEventListener('touchstart', function() {
                 this.style.transform = 'scale(0.96)';
                 this.style.opacity = '0.9';
+                this.style.transition = 'none';
             });
             
             card.addEventListener('touchend', function() {
                 this.style.transform = '';
                 this.style.opacity = '';
+                this.style.transition = 'all 0.2s ease';
             });
         });
     </script>
