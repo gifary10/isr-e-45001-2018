@@ -239,7 +239,42 @@
     </footer>
 
     <script>
-        // Enhanced mobile touch feedback
+    // Enhanced mobile touch feedback
+    document.querySelectorAll('.clause-card').forEach(card => {
+        card.addEventListener('touchstart', function() {
+            this.style.transform = 'scale(0.96)';
+            this.style.opacity = '0.9';
+            this.style.transition = 'none';
+        });
+        
+        card.addEventListener('touchend', function() {
+            this.style.transform = '';
+            this.style.opacity = '';
+            this.style.transition = 'all 0.2s ease';
+        });
+    });
+    
+    // Enhanced login check function
+    function checkLogin() {
+        // Check if logged in flag exists and is valid
+        const isLoggedIn = localStorage.getItem('isLoggedIn');
+        const lastLogin = localStorage.getItem('lastLogin');
+        
+        // If not logged in or login is older than 24 hours (86400000 ms), redirect
+        if (!isLoggedIn || isLoggedIn !== 'true' || 
+            !lastLogin || (Date.now() - parseInt(lastLogin)) > 86400000) {
+            localStorage.removeItem('isLoggedIn');
+            localStorage.removeItem('lastLogin');
+            window.location.href = 'https://gifary10.github.io/isr-login-access';
+        }
+    }
+    
+    // Run check when page loads
+    window.addEventListener('DOMContentLoaded', function() {
+        // First check login status
+        checkLogin();
+        
+        // Then set up mobile touch feedback
         document.querySelectorAll('.clause-card').forEach(card => {
             card.addEventListener('touchstart', function() {
                 this.style.transform = 'scale(0.96)';
@@ -253,9 +288,7 @@
                 this.style.transition = 'all 0.2s ease';
             });
         });
-        
-        // Check login status on page load
-        checkLogin();
-    </script>
+    });
+</script>
 </body>
 </html>
