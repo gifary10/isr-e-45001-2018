@@ -2,293 +2,247 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ISO 45001:2018 - Sistem K3</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root {
-            --primary: #f97316; /* Changed from blue to orange */
-            --primary-light: #ffedd5; /* Light orange */
+        .toggle-content {
+            display: none;
+            padding: 12px;
+            background-color: white;
+            border-radius: 8px;
+            margin-top: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: #f8fafc;
-            -webkit-tap-highlight-color: transparent;
-            padding-bottom: 60px;
+        
+        .toggle-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 16px;
+            background-color: var(--orange-primary);
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-bottom: 0;
         }
+        
+        .toggle-header i {
+            transition: transform 0.3s ease;
+        }
+        
+        .toggle-header.active i {
+            transform: rotate(180deg);
+        }
+        
+        .clause-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 16px;
+        }
+        
         .clause-card {
-            border-radius: 14px;
-            border: none;
+            background-color: white;
+            border-radius: 8px;
+            padding: 12px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             transition: all 0.2s ease;
-            overflow: hidden;
         }
+        
         .clause-card:active {
             transform: scale(0.98);
         }
+        
         .clause-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
+            width: 40px;
+            height: 40px;
+            background-color: var(--orange-primary);
+            color: white;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 16px;
+            margin: 0 auto 8px;
+            font-weight: bold;
         }
-        .logo-img {
-            height: 40px;
+        
+        .clause-title {
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 4px;
+            color: var(--text-dark);
         }
+        
+        .clause-desc {
+            font-size: 12px;
+            color: var(--gray-medium);
+        }
+        
         .intro-box {
-            background-color: #fff7ed; /* Light orange background */
-            border-radius: 14px;
-        }
-        .text-primary {
-            color: var(--primary) !important;
-        }
-        .bg-primary {
-            background-color: var(--primary) !important;
-        }
-        .bg-primary-light {
-            background-color: var(--primary-light) !important;
+            background-color: rgba(250, 122, 6, 0.1);
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 16px;
         }
     </style>
 </head>
 <body>
-    <!-- Login Check -->
-    <script>
-        // Check if user is logged in by looking for a session token or flag
-        function checkLogin() {
-            const isLoggedIn = localStorage.getItem('isLoggedIn');
-            if (!isLoggedIn || isLoggedIn !== 'true') {
-                // Redirect to login page if not logged in
-                window.location.href = 'https://gifary10.github.io/isr-login-access';
-            }
-        }
-        
-        // Run the check when page loads
-        window.onload = checkLogin;
-    </script>
-
-    <div class="container px-3 py-3">
-        <!-- Header with Logo -->
-        <div class="text-center mb-3">
-            <img src="logop.png" alt="ISO 45001" class="logo-img mb-2">
-            <h5 class="fw-bold text-dark mb-1">ISO 45001:2018</h5>
-            <p class="text-muted small">Sistem Manajemen K3</p>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logop.png" alt="Company Logo">
         </div>
+        <a href="https://gifary10.github.io/isr-login-access" class="product-btn">
+            <i class="fas fa-box-open"></i>
+            Pilih Produk
+        </a>
+    </nav>
 
-        <!-- ISO 45001 Introduction -->
-        <div class="intro-box p-3 mb-4">
-            <p class="small mb-2 text-muted">
-                <strong class="text-primary">ISO 45001:2018</strong> adalah standar internasional untuk Sistem Manajemen 
+    <div class="container">
+        <h1>ISO 45001:2018</h1>
+        <p>Sistem Manajemen K3</p>
+        
+        <div class="intro-box">
+            <p>
+                <strong>ISO 45001:2018</strong> adalah standar internasional untuk Sistem Manajemen 
                 Keselamatan dan Kesehatan Kerja (K3) yang membantu organisasi mengurangi risiko kecelakaan kerja 
                 dan penyakit akibat kerja, serta menciptakan tempat kerja yang lebih aman dan sehat.
             </p>
         </div>
-
-        <!-- Clause List -->
-        <div class="row g-2">
-            <!-- Klausul 1-10 -->
-            <div class="col-6">
-                <a href="clause1.html" class="text-decoration-none">
-                    <div class="clause-card card h-100 shadow-sm p-2">
-                        <div class="card-body text-center p-1">
-                            <div class="clause-icon bg-primary-light text-primary">
-                                <i class="bi bi-1-circle fs-5"></i>
-                            </div>
-                            <h6 class="fw-bold mb-1 small">Klausul 1</h6>
-                            <p class="text-muted x-small mb-0">Ruang Lingkup</p>
-                        </div>
-                    </div>
-                </a>
+        
+        <div class="toggle-section">
+            <div class="toggle-header">
+                <span>Klausul 1-10</span>
+                <i class="fas fa-chevron-down"></i>
             </div>
-
-            <div class="col-6">
-                <a href="clause2.html" class="text-decoration-none">
-                    <div class="clause-card card h-100 shadow-sm p-2">
-                        <div class="card-body text-center p-1">
-                            <div class="clause-icon bg-primary-light text-primary">
-                                <i class="bi bi-2-circle fs-5"></i>
-                            </div>
-                            <h6 class="fw-bold mb-1 small">Klausul 2</h6>
-                            <p class="text-muted x-small mb-0">Acuan Normatif</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-6">
-                <a href="clause3.html" class="text-decoration-none">
-                    <div class="clause-card card h-100 shadow-sm p-2">
-                        <div class="card-body text-center p-1">
-                            <div class="clause-icon bg-primary-light text-primary">
-                                <i class="bi bi-3-circle fs-5"></i>
-                            </div>
-                            <h6 class="fw-bold mb-1 small">Klausul 3</h6>
-                            <p class="text-muted x-small mb-0">Istilah & Definisi</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-6">
-                <a href="clause4.html" class="text-decoration-none">
-                    <div class="clause-card card h-100 shadow-sm p-2">
-                        <div class="card-body text-center p-1">
-                            <div class="clause-icon bg-primary-light text-primary">
-                                <i class="bi bi-4-circle fs-5"></i>
-                            </div>
-                            <h6 class="fw-bold mb-1 small">Klausul 4</h6>
-                            <p class="text-muted x-small mb-0">Konteks Organisasi</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-6">
-                <a href="clause5.html" class="text-decoration-none">
-                    <div class="clause-card card h-100 shadow-sm p-2">
-                        <div class="card-body text-center p-1">
-                            <div class="clause-icon bg-primary-light text-primary">
-                                <i class="bi bi-5-circle fs-5"></i>
-                            </div>
-                            <h6 class="fw-bold mb-1 small">Klausul 5</h6>
-                            <p class="text-muted x-small mb-0">Kepemimpinan</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-6">
-                <a href="clause6.html" class="text-decoration-none">
-                    <div class="clause-card card h-100 shadow-sm p-2">
-                        <div class="card-body text-center p-1">
-                            <div class="clause-icon bg-primary-light text-primary">
-                                <i class="bi bi-6-circle fs-5"></i>
-                            </div>
-                            <h6 class="fw-bold mb-1 small">Klausul 6</h6>
-                            <p class="text-muted x-small mb-0">Perencanaan</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-6">
-                <a href="clause7.html" class="text-decoration-none">
-                    <div class="clause-card card h-100 shadow-sm p-2">
-                        <div class="card-body text-center p-1">
-                            <div class="clause-icon bg-primary-light text-primary">
-                                <i class="bi bi-7-circle fs-5"></i>
-                            </div>
-                            <h6 class="fw-bold mb-1 small">Klausul 7</h6>
-                            <p class="text-muted x-small mb-0">Dukungan</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-6">
-                <a href="clause8.html" class="text-decoration-none">
-                    <div class="clause-card card h-100 shadow-sm p-2">
-                        <div class="card-body text-center p-1">
-                            <div class="clause-icon bg-primary-light text-primary">
-                                <i class="bi bi-8-circle fs-5"></i>
-                            </div>
-                            <h6 class="fw-bold mb-1 small">Klausul 8</h6>
-                            <p class="text-muted x-small mb-0">Operasi</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-6">
-                <a href="clause9.html" class="text-decoration-none">
-                    <div class="clause-card card h-100 shadow-sm p-2">
-                        <div class="card-body text-center p-1">
-                            <div class="clause-icon bg-primary-light text-primary">
-                                <i class="bi bi-9-circle fs-5"></i>
-                            </div>
-                            <h6 class="fw-bold mb-1 small">Klausul 9</h6>
-                            <p class="text-muted x-small mb-0">Evaluasi Kinerja</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-6">
-                <a href="clause10.html" class="text-decoration-none">
-                    <div class="clause-card card h-100 shadow-sm p-2">
-                        <div class="card-body text-center p-1">
-                            <div class="clause-icon bg-primary-light text-primary">
-                                <i class="bi bi-0-circle fs-5"></i>
-                            </div>
-                            <h6 class="fw-bold mb-1 small">Klausul 10</h6>
-                            <p class="text-muted x-small mb-0">Peningkatan</p>
-                        </div>
-                    </div>
-                </a>
+            <div class="toggle-content">
+                <div class="clause-grid">
+                    <a href="clause1.html" class="clause-card">
+                        <div class="clause-icon">1</div>
+                        <div class="clause-title">Klausul 1</div>
+                        <div class="clause-desc">Ruang Lingkup</div>
+                    </a>
+                    
+                    <a href="clause2.html" class="clause-card">
+                        <div class="clause-icon">2</div>
+                        <div class="clause-title">Klausul 2</div>
+                        <div class="clause-desc">Acuan Normatif</div>
+                    </a>
+                    
+                    <a href="clause3.html" class="clause-card">
+                        <div class="clause-icon">3</div>
+                        <div class="clause-title">Klausul 3</div>
+                        <div class="clause-desc">Istilah & Definisi</div>
+                    </a>
+                    
+                    <a href="clause4.html" class="clause-card">
+                        <div class="clause-icon">4</div>
+                        <div class="clause-title">Klausul 4</div>
+                        <div class="clause-desc">Konteks Organisasi</div>
+                    </a>
+                    
+                    <a href="clause5.html" class="clause-card">
+                        <div class="clause-icon">5</div>
+                        <div class="clause-title">Klausul 5</div>
+                        <div class="clause-desc">Kepemimpinan</div>
+                    </a>
+                    
+                    <a href="clause6.html" class="clause-card">
+                        <div class="clause-icon">6</div>
+                        <div class="clause-title">Klausul 6</div>
+                        <div class="clause-desc">Perencanaan</div>
+                    </a>
+                    
+                    <a href="clause7.html" class="clause-card">
+                        <div class="clause-icon">7</div>
+                        <div class="clause-title">Klausul 7</div>
+                        <div class="clause-desc">Dukungan</div>
+                    </a>
+                    
+                    <a href="clause8.html" class="clause-card">
+                        <div class="clause-icon">8</div>
+                        <div class="clause-title">Klausul 8</div>
+                        <div class="clause-desc">Operasi</div>
+                    </a>
+                    
+                    <a href="clause9.html" class="clause-card">
+                        <div class="clause-icon">9</div>
+                        <div class="clause-title">Klausul 9</div>
+                        <div class="clause-desc">Evaluasi Kinerja</div>
+                    </a>
+                    
+                    <a href="clause10.html" class="clause-card">
+                        <div class="clause-icon">10</div>
+                        <div class="clause-title">Klausul 10</div>
+                        <div class="clause-desc">Peningkatan</div>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
-
-    <!-- Fixed Footer -->
-    <footer class="fixed-bottom bg-white py-2 border-top">
-        <div class="container text-center">
-            <p class="small text-muted mb-0">2025. ISR Project</p>
-        </div>
-    </footer>
+    
+    <nav class="tab-bar">
+        <a href="index.html" class="tab">
+            <i class="fas fa-home"></i>
+            <span>Beranda</span>
+        </a>
+        <a href="content.html" class="tab active">
+            <i class="fas fa-file-alt"></i>
+            <span>Konten</span>
+        </a>
+        <a href="implement.html" class="tab">
+            <i class="fas fa-cogs"></i>
+            <span>Implementasi</span>
+        </a>
+        <a href="product.html" class="tab">
+            <i class="fas fa-box-open"></i>
+            <span>Produk</span>
+        </a>
+    </nav>
 
     <script>
-    // Enhanced mobile touch feedback
-    document.querySelectorAll('.clause-card').forEach(card => {
-        card.addEventListener('touchstart', function() {
-            this.style.transform = 'scale(0.96)';
-            this.style.opacity = '0.9';
-            this.style.transition = 'none';
+        // Toggle functionality
+        document.querySelectorAll('.toggle-header').forEach(header => {
+            header.addEventListener('click', function() {
+                this.classList.toggle('active');
+                const content = this.nextElementSibling;
+                if (content.style.display === 'block') {
+                    content.style.display = 'none';
+                } else {
+                    content.style.display = 'block';
+                }
+            });
         });
         
-        card.addEventListener('touchend', function() {
-            this.style.transform = '';
-            this.style.opacity = '';
-            this.style.transition = 'all 0.2s ease';
-        });
-    });
-    
-    // Enhanced login check function
-    function checkLogin() {
-        // Check if logged in flag exists and is valid
-        const isLoggedIn = localStorage.getItem('isLoggedIn');
-        const lastLogin = localStorage.getItem('lastLogin');
-        
-        // If not logged in or login is older than 24 hours (86400000 ms), redirect
-        if (!isLoggedIn || isLoggedIn !== 'true' || 
-            !lastLogin || (Date.now() - parseInt(lastLogin)) > 86400000) {
-            localStorage.removeItem('isLoggedIn');
-            localStorage.removeItem('lastLogin');
-            window.location.href = 'https://gifary10.github.io/isr-login-access';
+        // Login check
+        function checkLogin() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+            const lastLogin = localStorage.getItem('lastLogin');
+            
+            if (!isLoggedIn || isLoggedIn !== 'true' || 
+                !lastLogin || (Date.now() - parseInt(lastLogin)) > 86400000) {
+                localStorage.removeItem('isLoggedIn');
+                localStorage.removeItem('lastLogin');
+                window.location.href = 'https://gifary10.github.io/isr-login-access';
+            }
         }
-    }
-    
-    // Run check when page loads
-    window.addEventListener('DOMContentLoaded', function() {
-        // First check login status
-        checkLogin();
         
-        // Then set up mobile touch feedback
+        window.addEventListener('DOMContentLoaded', checkLogin);
+        
+        // Mobile touch feedback
         document.querySelectorAll('.clause-card').forEach(card => {
             card.addEventListener('touchstart', function() {
                 this.style.transform = 'scale(0.96)';
                 this.style.opacity = '0.9';
-                this.style.transition = 'none';
             });
             
             card.addEventListener('touchend', function() {
                 this.style.transform = '';
                 this.style.opacity = '';
-                this.style.transition = 'all 0.2s ease';
             });
         });
-    });
-</script>
+    </script>
 </body>
 </html>
