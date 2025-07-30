@@ -1,8 +1,3 @@
-// At the top of app.js
-if (new URLSearchParams(window.location.search).has('auth')) {
-    localStorage.setItem('isAuthenticated', 'true');
-    window.history.replaceState({}, document.title, window.location.pathname);
-}
 // app.js - Improved version with better error handling and optimizations
 
 // Constants
