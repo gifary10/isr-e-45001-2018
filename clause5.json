@@ -1,0 +1,160 @@
+{
+    "metadata": {
+        "title": "Klausul 5 - Kepemimpinan dan Partisipasi Pekerja | ISO 45001:2018",
+        "description": "Klausul 5 menekankan peran kepemimpinan manajemen puncak dan partisipasi pekerja dalam sistem manajemen K3.",
+        "keywords": "ISO 45001, Kepemimpinan, Kebijakan K3, Tanggung Jawab, Partisipasi Pekerja"
+    },
+    "clause": {
+        "number": "5",
+        "title": "Kepemimpinan dan Partisipasi Pekerja",
+        "introduction": "Manajemen puncak harus menunjukkan kepemimpinan dan komitmen terhadap sistem manajemen K3 dengan memastikan kebijakan dan tujuan ditetapkan serta sesuai dengan arah strategis organisasi."
+    },
+    "subClauses": [
+        {
+            "number": "5.1",
+            "title": "Kepemimpinan dan komitmen",
+            "description": "Manajemen puncak harus menunjukkan kepemimpinan dan komitmen dengan memastikan tanggung jawab dan akuntabilitas untuk K3 didelegasikan dengan tepat.",
+            "implementation": [
+                "Deklarasi komitmen manajemen",
+                "Alokasi sumber daya K3",
+                "Integrasi K3 dalam rapat manajemen",
+                "Komunikasi pentingnya K3"
+            ],
+            "documents": [
+                {
+                    "name": "Struktur Tanggung Jawab K3",
+                    "type": "wajib",
+                    "description": "Dokumen yang menjelaskan hierarki tanggung jawab K3"
+                },
+                {
+                    "name": "Dokumen Komitmen Manajemen",
+                    "type": "pendukung",
+                    "description": "Pernyataan tertulis komitmen manajemen puncak"
+                }
+            ]
+        },
+        {
+            "number": "5.2",
+            "title": "Kebijakan K3",
+            "description": "Manajemen puncak harus menetapkan, menerapkan, dan memelihara kebijakan K3 yang menyediakan kerangka kerja untuk menetapkan tujuan K3.",
+            "implementation": [
+                "Penyusunan draft kebijakan",
+                "Konsultasi dengan pekerja",
+                "Tinjauan dan persetujuan manajemen",
+                "Komunikasi ke seluruh organisasi"
+            ],
+            "documents": [
+                {
+                    "name": "Kebijakan K3",
+                    "type": "wajib",
+                    "description": "Dokumen formal yang ditandatangani manajemen puncak"
+                },
+                {
+                    "name": "Berita Acara Sosialisasi",
+                    "type": "pendukung",
+                    "description": "Dokumentasi penyebarluasan kebijakan"
+                }
+            ]
+        },
+        {
+            "number": "5.3",
+            "title": "Peran, tanggung jawab dan wewenang organisasi",
+            "description": "Manajemen puncak harus memastikan bahwa peran, tanggung jawab, dan wewenang untuk posisi yang relevan ditetapkan, dikomunikasikan, dan dipahami.",
+            "implementation": [
+                "Workshop penugasan tanggung jawab",
+                "Pembuatan matriks RACI",
+                "Pelatihan penanggung jawab K3",
+                "Monitoring pelaksanaan tanggung jawab"
+            ],
+            "documents": [
+                {
+                    "name": "Matriks Tanggung Jawab K3",
+                    "type": "wajib",
+                    "description": "Dokumen yang menjelaskan peran dan tanggung jawab spesifik"
+                },
+                {
+                    "name": "Deskripsi Jabatan K3",
+                    "type": "pendukung",
+                    "description": "Detail tugas dan wewenang posisi terkait K3"
+                }
+            ]
+        },
+        {
+            "number": "5.4",
+            "title": "Partisipasi dan konsultasi pekerja",
+            "description": "Organisasi harus menyediakan mekanisme untuk partisipasi dan konsultasi pekerja pada semua tingkatan dalam pengembangan sistem manajemen K3.",
+            "implementation": [
+                "Pembentukan P2K3",
+                "Forum konsultasi berkala",
+                "Sistem saran K3",
+                "Pelibatan dalam penilaian risiko"
+            ],
+            "documents": [
+                {
+                    "name": "Prosedur Partisipasi Pekerja",
+                    "type": "wajib",
+                    "description": "Dokumen yang menjelaskan mekanisme partisipasi"
+                },
+                {
+                    "name": "Daftar Anggota P2K3",
+                    "type": "wajib",
+                    "description": "Susunan personalia panitia pembina K3"
+                },
+                {
+                    "name": "Rekaman Konsultasi",
+                    "type": "pendukung",
+                    "description": "Catatan hasil konsultasi dengan pekerja"
+                }
+            ]
+        }
+    ],
+    "implementationGuidance": {
+        "title": "Panduan Implementasi Klausul 5",
+        "steps": [
+            {
+                "step": 1,
+                "title": "Membangun Komitmen Manajemen",
+                "description": "Mendapatkan komitmen nyata dari manajemen puncak",
+                "activities": [
+                    "Sosialisasi pentingnya SMK3 ke manajemen",
+                    "Libatkan manajemen dalam perumusan kebijakan",
+                    "Tetapkan indikator kinerja untuk manajemen",
+                    "Sertakan K3 dalam agenda rapat rutin"
+                ]
+            },
+            {
+                "step": 2,
+                "title": "Mengembangkan Kebijakan K3",
+                "description": "Membuat kebijakan yang efektif dan relevan",
+                "activities": [
+                    "Analisis kebutuhan organisasi",
+                    "Draft kebijakan dengan bahasa yang jelas",
+                    "Libatkan pekerja dalam penyusunan",
+                    "Dapatkan tanda tangan manajemen puncak"
+                ]
+            },
+            {
+                "step": 3,
+                "title": "Menetapkan Struktur Tanggung Jawab",
+                "description": "Memastikan semua peran dan tanggung jawab jelas",
+                "activities": [
+                    "Identifikasi semua fungsi yang relevan",
+                    "Gunakan matriks RACI (Responsible, Accountable, Consulted, Informed)",
+                    "Komunikasikan ke seluruh organisasi",
+                    "Lakukan evaluasi berkala"
+                ]
+            },
+            {
+                "step": 4,
+                "title": "Mendorong Partisipasi Pekerja",
+                "description": "Menciptakan mekanisme partisipasi yang efektif",
+                "activities": [
+                    "Bentuk P2K3 yang representatif",
+                    "Sediakan saluran komunikasi dua arah",
+                    "Berikan pelatihan kepada perwakilan pekerja",
+                    "Hargai kontribusi pekerja"
+                ]
+            }
+        ]
+    }
+}

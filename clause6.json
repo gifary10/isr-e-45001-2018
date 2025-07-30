@@ -1,0 +1,97 @@
+{
+    "metadata": {
+        "title": "Klausul 6 - Perencanaan | ISO 45001:2018",
+        "description": "Klausul 6 mencakup persyaratan untuk mengatasi risiko dan peluang, serta penetapan tujuan K3.",
+        "keywords": "ISO 45001, Perencanaan, Penilaian Risiko, Tujuan K3"
+    },
+    "clause": {
+        "number": "6",
+        "title": "Perencanaan",
+        "introduction": "Organisasi harus merencanakan tindakan untuk mengatasi risiko dan peluang, serta untuk mencapai tujuan K3."
+    },
+    "subClauses": [
+        {
+            "number": "6.1",
+            "title": "Tindakan untuk mengatasi risiko dan peluang",
+            "description": "Organisasi harus menetapkan proses untuk mengidentifikasi bahaya, menilai risiko dan peluang K3, serta menentukan tindakan yang diperlukan.",
+            "implementation": [
+                "Identifikasi bahaya",
+                "Penilaian risiko",
+                "Identifikasi peluang peningkatan",
+                "Penetapan kontrol risiko"
+            ],
+            "documents": [
+                {
+                    "name": "Prosedur Penilaian Risiko",
+                    "type": "wajib",
+                    "description": "Dokumen yang menjelaskan metodologi penilaian risiko"
+                },
+                {
+                    "name": "Register Bahaya dan Risiko",
+                    "type": "wajib",
+                    "description": "Daftar bahaya dan risiko yang teridentifikasi"
+                },
+                {
+                    "name": "Rencana Pengendalian Risiko",
+                    "type": "wajib",
+                    "description": "Dokumen rencana untuk mengelola risiko"
+                }
+            ]
+        },
+        {
+            "number": "6.2",
+            "title": "Tujuan K3 dan perencanaan untuk mencapainya",
+            "description": "Organisasi harus menetapkan tujuan K3 pada fungsi dan level yang relevan, serta merencanakan bagaimana mencapainya.",
+            "implementation": [
+                "Workshop penetapan tujuan",
+                "Penyelarasan dengan kebijakan K3",
+                "Penetapan indikator kinerja",
+                "Alokasi sumber daya"
+            ],
+            "documents": [
+                {
+                    "name": "Dokumen Tujuan K3",
+                    "type": "wajib",
+                    "description": "Tujuan K3 yang telah disetujui manajemen"
+                },
+                {
+                    "name": "Rencana Pencapaian Tujuan",
+                    "type": "wajib",
+                    "description": "Rencana tindakan untuk mencapai tujuan"
+                },
+                {
+                    "name": "Laporan Kinerja Tujuan",
+                    "type": "pendukung",
+                    "description": "Evaluasi pencapaian tujuan K3"
+                }
+            ]
+        }
+    ],
+    "implementationGuidance": {
+        "title": "Panduan Implementasi Klausul 6",
+        "steps": [
+            {
+                "step": 1,
+                "title": "Penilaian Risiko Komprehensif",
+                "description": "Mengidentifikasi dan menilai semua risiko K3",
+                "activities": [
+                    "Pembentukan tim penilai risiko",
+                    "Pelatihan metodologi penilaian risiko",
+                    "Identifikasi bahaya di semua area",
+                    "Prioritisasi risiko berdasarkan tingkat keparahan"
+                ]
+            },
+            {
+                "step": 2,
+                "title": "Penetapan Tujuan K3",
+                "description": "Menetapkan tujuan yang SMART (Specific, Measurable, Achievable, Relevant, Time-bound)",
+                "activities": [
+                    "Analisis kesenjangan kinerja K3",
+                    "Workshop penetapan tujuan",
+                    "Penetapan indikator dan target",
+                    "Komunikasi tujuan ke seluruh organisasi"
+                ]
+            }
+        ]
+    }
+}

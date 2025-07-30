@@ -1,0 +1,29 @@
+{
+    "metadata": {
+        "title": "Klausul 3 - Istilah dan Definisi | ISO 45001:2018",
+        "description": "Klausul 3 memberikan istilah dan definisi yang digunakan dalam standar ISO 45001.",
+        "keywords": "ISO 45001, Istilah, Definisi, Glosarium K3"
+    },
+    "clause": {
+        "number": "3",
+        "title": "Istilah dan Definisi",
+        "introduction": "Untuk keperluan dokumen ini, istilah dan definisi yang diberikan dalam ISO 45001:2018 berlaku."
+    },
+    "subClauses": [],
+    "implementationGuidance": {
+        "title": "Panduan Implementasi Klausul 3",
+        "steps": [
+            {
+                "step": 1,
+                "title": "Pemahaman Istilah Kunci",
+                "description": "Memahami istilah dan definisi dalam ISO 45001",
+                "activities": [
+                    "Pembuatan glosarium K3",
+                    "Pelatihan istilah teknis",
+                    "Penyelarasan definisi internal",
+                    "Komunikasi istilah ke seluruh organisasi"
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,457 @@
+/* main.css */
+:root {
+    --primary-color: #4361ee;
+    --primary-dark: #3a56d4;
+    --secondary-color: #3f37c9;
+    --accent-color: #4cc9f0;
+    --dark-color: #2b2d42;
+    --light-color: #f8f9fa;
+    --success-color: #388e3c;
+    --warning-color: #f57c00;
+    --danger-color: #d32f2f;
+    --text-color: #212529;
+    --text-muted: #6c757d;
+    --border-color: #dee2e6;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    max-width: 100%;
+    margin: 0 auto;
+    background-color: #f5f7fa;
+    color: var(--text-color);
+    overflow-x: hidden;
+    line-height: 1.5;
+}
+
+.app-container {
+    max-width: 420px;
+    margin: 0 auto;
+    background: white;
+    min-height: 100vh;
+    box-shadow: 0 0 15px rgba(0,0,0,0.05);
+    position: relative;
+}
+
+.navbar-brand {
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    color: white !important;
+}
+
+.navbar-brand i {
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+.search-container {
+    padding: 0 15px;
+    margin-bottom: 15px;
+}
+
+.search-input {
+    border-radius: 20px;
+    padding-left: 40px;
+    border: 1px solid var(--border-color);
+    background-color: var(--light-color);
+    color: var(--text-color);
+}
+
+.search-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(67, 97, 238, 0.25);
+}
+
+.search-icon {
+    position: absolute;
+    left: 30px;
+    top: 10px;
+    color: var(--text-muted);
+}
+
+.section-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-bottom: 15px;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.clause-card {
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    border: none;
+    transform: translateY(0);
+    opacity: 0;
+    background: white;
+}
+
+.clause-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.clause-card:hover, .clause-card:focus-within {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    outline: 2px solid var(--primary-color);
+}
+
+.clause-card:active {
+    transform: scale(0.98) !important;
+}
+
+.clause-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 14px 16px;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.clause-header:focus {
+    outline: 2px solid white;
+}
+
+.clause-body {
+    padding: 16px;
+    background-color: white;
+}
+
+.clause-body p {
+    margin-bottom: 0;
+    color: var(--text-color);
+    font-size: 0.9rem;
+}
+
+.badge-custom {
+    background-color: var(--accent-color);
+    font-weight: 500;
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    border-radius: 10px;
+    color: white;
+}
+
+.subclause-item {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.subclause-item:hover, .subclause-item:focus-within {
+    background-color: var(--light-color);
+    outline: 2px solid var(--primary-color);
+}
+
+.subclause-item .badge {
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
+.subclause-item p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+.back-btn {
+    margin-bottom: 15px;
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    display: inline-flex;
+    align-items: center;
+    background-color: white;
+    border: 1px solid var(--border-color);
+    color: var(--dark-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.back-btn:hover, .back-btn:focus {
+    background-color: var(--light-color);
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.back-btn i {
+    margin-right: 5px;
+}
+
+.doc-badge {
+    font-size: 0.7rem;
+    margin-right: 8px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: 500;
+    color: white;
+}
+
+.doc-wajib {
+    background-color: var(--danger-color);
+}
+
+.doc-pendukung {
+    background-color: var(--success-color);
+}
+
+.doc-item {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.doc-item strong {
+    font-size: 0.9rem;
+}
+
+.doc-item p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+    margin-bottom: 0;
+}
+
+.implementation-item {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: flex-start;
+}
+
+.implementation-item:last-child {
+    border-bottom: none;
+}
+
+.step-number {
+    background-color: var(--primary-color);
+    color: white;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    margin-right: 10px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.step-text {
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.tab-container {
+    display: flex;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 15px;
+}
+
+.tab {
+    padding: 10px 15px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+    background: none;
+    border: none;
+    position: relative;
+}
+
+.tab:focus {
+    outline: 2px solid var(--primary-color);
+    z-index: 1;
+}
+
+.tab.active {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.floating-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+    z-index: 100;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.floating-btn:hover, .floating-btn:focus {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(67, 97, 238, 0.4);
+    outline: none;
+}
+
+.floating-btn:active {
+    transform: scale(0.95);
+}
+
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-muted);
+}
+
+.empty-state i {
+    font-size: 2.5rem;
+    color: #ddd;
+    margin-bottom: 15px;
+}
+
+.empty-state p {
+    font-size: 0.9rem;
+}
+
+/* Focus styles for accessibility */
+[tabindex]:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Animation classes */
+.fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.slide-up {
+    animation: slideUp 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 420px) {
+    .app-container {
+        box-shadow: none;
+    }
+    
+    .clause-header {
+        padding: 12px;
+    }
+    
+    .clause-body {
+        padding: 12px;
+    }
+}
+
+/* Print styles */
+@media print {
+    .app-container {
+        max-width: 100%;
+        box-shadow: none;
+    }
+    
+    .floating-btn, .back-btn, .search-container {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+        font-size: 12pt;
+    }
+    
+    .clause-card {
+        break-inside: avoid;
+        margin-bottom: 1cm;
+    }
+}
+
+/* Tambahkan di bagian akhir file CSS */
+
+/* Improved focus styles */
+:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Better animation performance */
+.clause-card, .subclause-item, .implementation-item, .doc-item {
+    will-change: transform, opacity;
+}
+
+/* Print styles improvements */
+@media print {
+    .navbar {
+        background: white !important;
+        color: black !important;
+        border-bottom: 1px solid #000;
+    }
+    
+    .navbar-brand {
+        color: black !important;
+    }
+    
+    .clause-header {
+        background: white !important;
+        color: black !important;
+        border-bottom: 1px solid #000;
+    }
+    
+    .badge-custom, .badge {
+        background: white !important;
+        color: black !important;
+        border: 1px solid #000;
+    }
+    
+    .tab-content {
+        display: block !important;
+        opacity: 1 !important;
+    }
+    
+    .floating-btn, .back-btn, .search-container, .tab-container {
+        display: none !important;
+    }
+}
+
+/* Loading spinner styles */
+.spinner-border {
+    width: 2rem;
+    height: 2rem;
+    margin: 1rem auto;
+    display: block;
+}

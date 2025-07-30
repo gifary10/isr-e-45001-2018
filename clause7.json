@@ -1,0 +1,194 @@
+{
+    "metadata": {
+        "title": "Klausul 7 - Dukungan | ISO 45001:2018",
+        "description": "Klausul 7 mencakup persyaratan untuk sumber daya, kompetensi, kesadaran, komunikasi, dan dokumentasi.",
+        "keywords": "ISO 45001, Dukungan, Kompetensi, Komunikasi, Dokumentasi"
+    },
+    "clause": {
+        "number": "7",
+        "title": "Dukungan",
+        "introduction": "Organisasi harus menentukan dan menyediakan sumber daya yang diperlukan untuk menetapkan, menerapkan, memelihara, dan meningkatkan sistem manajemen K3."
+    },
+    "subClauses": [
+        {
+            "number": "7.1",
+            "title": "Sumber daya",
+            "description": "Organisasi harus menentukan dan menyediakan sumber daya yang diperlukan untuk sistem manajemen K3.",
+            "implementation": [
+                "Alokasi anggaran K3",
+                "Penetapan personel K3",
+                "Penyediaan infrastruktur",
+                "Pengadaan alat pelindung diri"
+            ],
+            "documents": [
+                {
+                    "name": "Rencana Alokasi Sumber Daya",
+                    "type": "wajib",
+                    "description": "Dokumen perencanaan sumber daya K3"
+                },
+                {
+                    "name": "Register Infrastruktur K3",
+                    "type": "pendukung",
+                    "description": "Daftar fasilitas dan peralatan pendukung K3"
+                }
+            ]
+        },
+        {
+            "number": "7.2",
+            "title": "Kompetensi",
+            "description": "Organisasi harus menentukan kompetensi yang diperlukan untuk personel yang melakukan pekerjaan yang mempengaruhi kinerja K3.",
+            "implementation": [
+                "Analisis kebutuhan pelatihan",
+                "Penyelenggaraan pelatihan",
+                "Evaluasi efektivitas pelatihan",
+                "Pemeliharaan rekaman kompetensi"
+            ],
+            "documents": [
+                {
+                    "name": "Matriks Kompetensi K3",
+                    "type": "wajib",
+                    "description": "Dokumen yang memetakan kompetensi yang dibutuhkan"
+                },
+                {
+                    "name": "Rekaman Pelatihan",
+                    "type": "wajib",
+                    "description": "Dokumentasi pelatihan yang telah dilaksanakan"
+                },
+                {
+                    "name": "Rencana Pelatihan Tahunan",
+                    "type": "pendukung",
+                    "description": "Perencanaan pengembangan kompetensi K3"
+                }
+            ]
+        },
+        {
+            "number": "7.3",
+            "title": "Kesadaran",
+            "description": "Personel yang melakukan pekerjaan di bawah kendali organisasi harus menyadari kebijakan K3, kontribusi mereka terhadap efektivitas SMK3, dan implikasi ketidakpatuhan.",
+            "implementation": [
+                "Program kesadaran K3",
+                "Penyebaran informasi K3",
+                "Kampanye keselamatan",
+                "Pemasangan signage K3"
+            ],
+            "documents": [
+                {
+                    "name": "Rencana Kesadaran K3",
+                    "type": "wajib",
+                    "description": "Dokumen perencanaan program kesadaran"
+                },
+                {
+                    "name": "Daftar Peserta Sosialisasi",
+                    "type": "pendukung",
+                    "description": "Rekaman kehadiran dalam kegiatan kesadaran"
+                }
+            ]
+        },
+        {
+            "number": "7.4",
+            "title": "Komunikasi",
+            "description": "Organisasi harus menentukan proses komunikasi internal dan eksternal yang relevan dengan SMK3.",
+            "implementation": [
+                "Pembuatan saluran komunikasi K3",
+                "Penetapan prosedur komunikasi",
+                "Pelaporan insiden",
+                "Komunikasi dengan pihak eksternal"
+            ],
+            "documents": [
+                {
+                    "name": "Prosedur Komunikasi K3",
+                    "type": "wajib",
+                    "description": "Dokumen yang mengatur komunikasi terkait K3"
+                },
+                {
+                    "name": "Register Komunikasi Eksternal",
+                    "type": "pendukung",
+                    "description": "Catatan komunikasi dengan pihak luar terkait K3"
+                }
+            ]
+        },
+        {
+            "number": "7.5",
+            "title": "Informasi terdokumentasi",
+            "description": "Sistem manajemen K3 harus mencakup informasi terdokumentasi yang diperlukan untuk efektivitas sistem.",
+            "implementation": [
+                "Pengembangan dokumentasi sistem",
+                "Pengendalian dokumen dan rekaman",
+                "Penyimpanan dan retensi dokumen",
+                "Akses terhadap informasi"
+            ],
+            "documents": [
+                {
+                    "name": "Daftar Dokumen Wajib",
+                    "type": "wajib",
+                    "description": "Inventaris dokumen yang diperlukan oleh standar"
+                },
+                {
+                    "name": "Prosedur Pengendalian Dokumen",
+                    "type": "wajib",
+                    "description": "Prosedur untuk mengelola dokumen dan rekaman"
+                }
+            ]
+        }
+    ],
+    "implementationGuidance": {
+        "title": "Panduan Implementasi Klausul 7",
+        "steps": [
+            {
+                "step": 1,
+                "title": "Pengelolaan Sumber Daya",
+                "description": "Memastikan ketersediaan sumber daya yang memadai",
+                "activities": [
+                    "Identifikasi kebutuhan sumber daya",
+                    "Penganggaran untuk program K3",
+                    "Penetapan tim K3",
+                    "Penyediaan infrastruktur pendukung"
+                ]
+            },
+            {
+                "step": 2,
+                "title": "Pengembangan Kompetensi",
+                "description": "Membangun kapasitas personel terkait K3",
+                "activities": [
+                    "Analisis kebutuhan pelatihan",
+                    "Penyusunan matriks kompetensi",
+                    "Pelaksanaan program pelatihan",
+                    "Evaluasi efektivitas pelatihan"
+                ]
+            },
+            {
+                "step": 3,
+                "title": "Membangun Kesadaran",
+                "description": "Menciptakan budaya K3 di seluruh organisasi",
+                "activities": [
+                    "Program sosialisasi kebijakan K3",
+                    "Kampanye keselamatan berkala",
+                    "Penyebaran materi informasi K3",
+                    "Pengukuran tingkat kesadaran"
+                ]
+            },
+            {
+                "step": 4,
+                "title": "Manajemen Komunikasi",
+                "description": "Mengatur aliran informasi terkait K3",
+                "activities": [
+                    "Penetapan saluran komunikasi",
+                    "Pelatihan komunikasi efektif",
+                    "Pembuatan prosedur pelaporan",
+                    "Monitoring efektivitas komunikasi"
+                ]
+            },
+            {
+                "step": 5,
+                "title": "Pengendalian Dokumen",
+                "description": "Mengelola informasi terdokumentasi dengan efektif",
+                "activities": [
+                    "Pengembangan struktur dokumentasi",
+                    "Penerapan sistem pengendalian dokumen",
+                    "Pelatihan pengelolaan dokumen",
+                    "Audit dokumentasi berkala"
+                ]
+            }
+        ]
+    }
+}
