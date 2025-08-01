@@ -9,6 +9,9 @@ import { showClauseDetail, showSubclauseDetail } from './app.js';
 const DASHBOARD_REFRESH_INTERVAL = 30000; // 30 seconds
 const CLAUSE_COUNT = 10;
 
+// Keep track of chart instances
+let documentsChart = null;
+
 function createDashboardContainer() {
     const dashboardContainer = document.createElement('div');
     dashboardContainer.className = 'dashboard-container';
@@ -370,11 +373,12 @@ function updateDocumentsChart(total, mandatory, supporting) {
         const ctx = document.getElementById('documents-chart');
         if (!ctx) return;
         
-        if (ctx.chart) {
-            ctx.chart.destroy();
+        // Destroy previous chart if it exists
+        if (documentsChart) {
+            documentsChart.destroy();
         }
         
-        ctx.chart = new Chart(ctx, {
+        documentsChart = new Chart(ctx, {
             type: 'doughnut',
             data: {
                 labels: ['Wajib', 'Pendukung'],
@@ -389,6 +393,7 @@ function updateDocumentsChart(total, mandatory, supporting) {
             },
             options: {
                 responsive: true,
+                maintainAspectRatio: false,
                 plugins: {
                     legend: {
                         position: 'bottom'
@@ -460,6 +465,12 @@ function showMainContent() {
         }
         
         clearInterval(window.dashboardRefreshInterval);
+        
+        // Clean up chart when leaving dashboard
+        if (documentsChart) {
+            documentsChart.destroy();
+            documentsChart = null;
+        }
     } catch (error) {
         console.error('Error showing main content:', error);
     }
