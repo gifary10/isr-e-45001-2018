@@ -10,7 +10,7 @@ import {
     showEmptyState
 } from './render-service.js';
 import { getAppState, updateAppState, resetAppState } from './state-service.js';
-import { showDashboard } from './dashboard.js';
+import { showDashboard, showMainContent } from './dashboard.js'; // Tambahkan import showMainContent
 
 const CLAUSE_FILES = Array.from({length: 10}, (_, i) => `clause${i+1}.json`);
 const DEBOUNCE_DELAY = 300;
@@ -470,7 +470,7 @@ function handleClauseClick(clauseNumber) {
     showClauseDetail(clauseNumber);
 }
 
-// app.js - update the init function
+// app.js (hanya bagian yang perlu diperbaiki)
 function init() {
     if (!checkRequiredElements()) {
         console.error('Aplikasi tidak dapat dijalankan karena elemen yang diperlukan tidak ditemukan');
@@ -495,7 +495,7 @@ function init() {
     if (toggleBtn) {
         toggleBtn.addEventListener('click', () => {
             const dashboardView = document.getElementById('dashboard-view');
-            if (dashboardView.classList.contains('d-none')) {
+            if (dashboardView && dashboardView.classList.contains('d-none')) {
                 showDashboard();
             } else {
                 showMainContent();
@@ -505,5 +505,5 @@ function init() {
 }
 
 document.addEventListener('DOMContentLoaded', init);
-// Di bagian akhir app.js, tambahkan:
+
 export { showClauseDetail, showSubclauseDetail };
