@@ -1,15 +1,13 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ISO 45001 Implementation Guide</title>
-    <!-- Tambahkan meta description yang lebih baik -->
     <meta name="theme-color" content="#4361ee" />
     <meta name="description" content="Panduan implementasi lengkap untuk ISO 45001:2018 Sistem Manajemen Kesehatan dan Keselamatan Kerja">
-    <!-- Tambahkan favicon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <!-- Preload font untuk performa lebih baik -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" as="style">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -21,108 +19,137 @@
         <nav class="navbar navbar-dark" style="background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));">
             <div class="container-fluid">
                 <span class="navbar-brand">
-                    <i class="bi bi-shield-check" aria-hidden="true"></i> ISO 45001 Guide
+                    <img src="logop.png" alt="Logo" style="height: 30px; margin-right: 10px;">
+                        <i class="bi bi-shield-check" aria-hidden="true"></i> ISO 45001:2018 Companion
                 </span>
+                <div class="d-flex">
+                    <button id="toggle-view-btn" class="btn btn-sm btn-light ms-2">
+                        <i class="bi bi-speedometer2"></i> Dashboard
+                    </button>
+                </div>
             </div>
         </nav>
 
-        <main> <!-- Tambahkan elemen main untuk aksesibilitas -->
-            <div class="container mt-3" id="clauses-container">
+        <!-- Toast container for error messages -->
+        <div id="toast-container" class="toast-container position-fixed bottom-0 end-0 p-3"></div>
+
+        <main>
+            <!-- Dashboard View (hidden by default) -->
+            <div id="dashboard-view" class="d-none">
+                <div class="dashboard-container container mt-3 px-3">
+                    <!-- Dashboard content will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Main Content View -->
+            <div id="main-content-view">
+                <!-- Search moved above nav bar -->
                 <div class="search-container">
                     <div class="position-relative">
                         <label for="search-input" class="visually-hidden">Cari klausul atau sub klausul</label>
-                        <i class="bi bi-search search-icon" aria-hidden="true"></i>
                         <input type="text" class="form-control search-input" id="search-input" 
                                placeholder="Cari klausul atau sub klausul..." aria-label="Cari klausul atau sub klausul">
                     </div>
                 </div>
-                
-                <div class="section-title">
-                    <h1 class="h5">Daftar Klausul</h1>
-                    <span class="badge bg-light text-dark">10 Klausul</span>
-                </div>
-                
-                <div class="row px-2" id="clauses-list" role="list">
-                    <!-- Klausul akan diisi oleh JavaScript -->
-                </div>
-            </div>
 
-            <div class="container mt-3 d-none px-3" id="clause-detail-container">
-                <button class="btn btn-sm back-btn" id="back-btn" aria-label="Kembali ke daftar klausul">
-                    <i class="bi bi-arrow-left" aria-hidden="true"></i> Kembali ke Daftar
-                </button>
-                
-                <article> <!-- Tambahkan elemen article untuk konten utama -->
-                    <div class="card border-0">
-                        <div class="clause-header" id="clause-title" tabindex="0">
-                            Klausul Detail
-                        </div>
-                        <div class="clause-body">
-                            <p id="clause-description">Deskripsi klausul akan muncul di sini</p>
-                            
-                            <div class="section-title mt-4">
-                                <h2 class="h6">Sub Klausul</h2>
-                            </div>
-                            
-                            <div id="subclauses-list" role="list">
-                                <!-- Sub klausul akan diisi oleh JavaScript -->
-                            </div>
-                        </div>
+                <!-- Horizontal scrollable nav bar -->
+                <div class="clauses-nav-container">
+                    <div class="clauses-nav-scroll">
+                        <nav class="clauses-nav" id="clauses-nav" role="tablist">
+                            <!-- Clause nav items will be populated by JavaScript -->
+                        </nav>
                     </div>
-                </article>
-            </div>
+                </div>
 
-            <div class="container mt-3 d-none px-3" id="subclause-detail-container">
-                <button class="btn btn-sm back-btn" id="back-subclause-btn" aria-label="Kembali ke detail klausul">
-                    <i class="bi bi-arrow-left" aria-hidden="true"></i> Kembali
-                </button>
-                
-                <article> <!-- Tambahkan elemen article untuk konten utama -->
-                    <div class="card border-0">
-                        <div class="clause-header" id="subclause-title" tabindex="0">
-                            Sub Klausul Detail
-                        </div>
-                        <div class="clause-body">
-                            <p id="subclause-description">Deskripsi sub klausul akan muncul di sini</p>
-                            
-                            <div class="tab-container" role="tablist">
-                                <button class="tab active" id="implementation-tab" data-tab="implementation" role="tab" aria-selected="true" aria-controls="implementation-content">Implementasi</button>
-                                <button class="tab" id="documents-tab" data-tab="documents" role="tab" aria-selected="false" aria-controls="documents-content">Dokumen</button>
-                                <button class="tab" id="guidance-tab" data-tab="guidance" role="tab" aria-selected="false" aria-controls="guidance-content">Panduan</button>
+                <div class="container mt-3" id="clauses-container">
+                    <div class="section-title">
+                        <h1 class="h5">Daftar Klausul</h1>
+                        <span class="badge bg-light text-dark">10 Klausul</span>
+                    </div>
+                    
+                    <div class="row px-2" id="clauses-list" role="list">
+                        <!-- Klausul akan diisi oleh JavaScript -->
+                    </div>
+                </div>
+
+                <div class="container mt-3 d-none px-3" id="clause-detail-container">
+                    <article>
+                        <div class="card border-0">
+                            <div class="clause-header" id="clause-title" tabindex="0">
+                                Klausul Detail
                             </div>
-                            
-                            <div class="tab-content active" id="implementation-content" role="tabpanel" aria-labelledby="implementation-tab">
-                                <ul class="list-unstyled" id="implementation-list" role="list">
-                                    <!-- Implementasi akan diisi oleh JavaScript -->
-                                </ul>
-                            </div>
-                            
-                            <div class="tab-content" id="documents-content" role="tabpanel" aria-labelledby="documents-tab">
-                                <div id="documents-list" role="list">
-                                    <!-- Dokumen akan diisi oleh JavaScript -->
+                            <div class="clause-body">
+                                <p id="clause-description">Deskripsi klausul akan muncul di sini</p>
+                                
+                                <div class="section-title mt-4">
+                                    <h2 class="h6">Sub Klausul</h2>
                                 </div>
-                            </div>
-                            
-                            <div class="tab-content" id="guidance-content" role="tabpanel" aria-labelledby="guidance-tab">
-                                <div class="empty-state">
-                                    <i class="bi bi-info-circle" aria-hidden="true"></i>
-                                    <p>Panduan implementasi akan ditampilkan di sini</p>
+                                
+                                <div id="subclauses-list" role="list">
+                                    <!-- Sub klausul akan diisi oleh JavaScript -->
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </article>
+                    </article>
+                </div>
+
+                <div class="container mt-3 d-none px-3" id="subclause-detail-container">
+                    <article>
+                        <div class="card border-0">
+                            <div class="clause-header" id="subclause-title" tabindex="0">
+                                Sub Klausul Detail
+                            </div>
+                            <div class="clause-body">
+                                <p id="subclause-description">Deskripsi sub klausul akan muncul di sini</p>
+                                
+                                <div class="tab-container" role="tablist">
+                                    <button class="tab active" id="implementation-tab" data-tab="implementation" role="tab" aria-selected="true" aria-controls="implementation-content">Implementasi</button>
+                                    <button class="tab" id="documents-tab" data-tab="documents" role="tab" aria-selected="false" aria-controls="documents-content">Dokumen</button>
+                                    <button class="tab" id="guidance-tab" data-tab="guidance" role="tab" aria-selected="false" aria-controls="guidance-content">Panduan</button>
+                                </div>
+                                
+                                <div class="tab-content active" id="implementation-content" role="tabpanel" aria-labelledby="implementation-tab">
+                                    <ul class="list-unstyled" id="implementation-list" role="list">
+                                        <!-- Implementasi akan diisi oleh JavaScript -->
+                                    </ul>
+                                </div>
+                                
+                                <div class="tab-content" id="documents-content" role="tabpanel" aria-labelledby="documents-tab">
+                                    <div id="documents-list" role="list">
+                                        <!-- Dokumen akan diisi oleh JavaScript -->
+                                    </div>
+                                </div>
+                                
+                                <div class="tab-content" id="guidance-content" role="tabpanel" aria-labelledby="guidance-tab">
+                                    <div class="empty-state">
+                                        <i class="bi bi-info-circle" aria-hidden="true"></i>
+                                        <p>Panduan implementasi akan ditampilkan di sini</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
             </div>
         </main>
+        
+        <!-- Floating buttons -->
+        <button class="floating-btn back-floating-btn" id="back-btn" aria-label="Kembali ke daftar klausul" style="display: none;">
+            <i class="bi bi-arrow-left" aria-hidden="true"></i>
+        </button>
+        
+        <button class="floating-btn back-floating-btn" id="back-subclause-btn" aria-label="Kembali ke detail klausul" style="display: none;">
+            <i class="bi bi-arrow-left" aria-hidden="true"></i>
+        </button>
         
         <button class="floating-btn" id="scroll-top-btn" style="display: none;" aria-label="Kembali ke atas">
             <i class="bi bi-arrow-up" aria-hidden="true"></i>
         </button>
     </div>
 
-    <!-- Letakkan script di bagian bawah body untuk performa -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
-<script src="app.js" type="module"></script>
+    <script src="app.js" type="module"></script>
+    <script src="dashboard.js" type="module"></script>
 </body>
 </html>
