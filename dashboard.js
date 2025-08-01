@@ -126,7 +126,14 @@ function createDashboardContainer() {
     // Add event listeners after creating the container
     const refreshBtn = dashboardContainer.querySelector('#refresh-dashboard-btn');
     if (refreshBtn) {
-        refreshBtn.addEventListener('click', updateDashboard);
+        refreshBtn.addEventListener('click', () => {
+            updateDashboard();
+            // Show a visual feedback that dashboard is refreshing
+            refreshBtn.innerHTML = '<i class="bi bi-arrow-clockwise spin"></i> Memperbarui...';
+            setTimeout(() => {
+                refreshBtn.innerHTML = '<i class="bi bi-arrow-clockwise"></i> Segarkan';
+            }, 1000);
+        });
     }
     
     return dashboardContainer;
@@ -420,15 +427,15 @@ function showDashboard() {
             toggleBtn.onclick = showMainContent;
         }
         
-        const dashboardContainer = document.querySelector('.dashboard-container');
-        if (!dashboardContainer) {
-            const container = createDashboardContainer();
-            dashboardView.innerHTML = '';
-            dashboardView.appendChild(container);
-        }
+        // Always create a new container to ensure fresh data
+        const container = createDashboardContainer();
+        dashboardView.innerHTML = '';
+        dashboardView.appendChild(container);
         
+        // Initialize dashboard content
         updateDashboard();
         
+        // Clear any existing interval and set new one
         clearInterval(window.dashboardRefreshInterval);
         window.dashboardRefreshInterval = setInterval(updateDashboard, DASHBOARD_REFRESH_INTERVAL);
     } catch (error) {
