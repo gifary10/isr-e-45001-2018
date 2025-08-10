@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     function isUserLoggedIn() {
-        const loginData = localStorage.getItem('loginData');
+        const loginData = localStorage.getItem('safetyReportLoginData');
         if (!loginData) return false;
 
         try {
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const now = Date.now();
             const eightHours = 8 * 60 * 60 * 1000; // ms
             if (now - parsed.loginTime > eightHours) {
-                localStorage.removeItem('loginData'); // hapus data kadaluarsa
+                localStorage.removeItem('safetyReportLoginData'); // hapus data kadaluarsa
                 return false;
             }
 
@@ -33,4 +33,5 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!isUserLoggedIn()) {
         window.location.href = 'https://gifary10.github.io/isr-login-access/';
     }
+
 });
