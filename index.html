@@ -150,11 +150,32 @@
         </button>
     </div>
 
-    <script src="redirect-auth.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="app.js" type="module"></script>
     <script src="dashboard.js" type="module"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const loginData = localStorage.getItem('safetyReportLoginData');
+    const isLoggedIn = loginData && (() => {
+        try {
+            const data = JSON.parse(loginData);
+            const now = Date.now();
+            return data.loginTime && (now - data.loginTime) <= (8 * 60 * 60 * 1000);
+        } catch {
+            return false;
+        }
+    })();
+
+    if (!isLoggedIn) {
+        // Redirect ke halaman login
+        window.location.href = 'https://gifary10.github.io/isr-login-access/';
+    }
+});
+</script>
+    
 </body>
 </html>
+
