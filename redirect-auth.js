@@ -1,28 +1,26 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     function isUserLoggedIn() {
-        const loginData = localStorage.getItem('safetyReportLoginData');
-        if (!loginData) return false;
+    const loginData = localStorage.getItem('safetyReportLoginData'); // disamakan
+    if (!loginData) return false;
 
-        try {
-            const parsed = JSON.parse(loginData);
+    try {
+        const parsed = JSON.parse(loginData);
 
-            // Pastikan semua field ada
-            if (!parsed.username || !parsed.email || !parsed.accessCode) return false;
+        if (!parsed.username || !parsed.email || !parsed.accessCode) return false;
 
-            // Cek expiry time (8 jam)
-            const now = Date.now();
-            const eightHours = 8 * 60 * 60 * 1000; // ms
-            if (now - parsed.loginTime > eightHours) {
-                localStorage.removeItem('safetyReportLoginData'); // hapus data kadaluarsa
-                return false;
-            }
-
-            return true;
-        } catch (e) {
+        const now = Date.now();
+        const eightHours = 8 * 60 * 60 * 1000;
+        if (now - parsed.loginTime > eightHours) {
+            localStorage.removeItem('safetyReportLoginData'); // disamakan
             return false;
         }
+
+        return true;
+    } catch (e) {
+        return false;
     }
+}
 
     // Kalau di halaman login → jangan redirect
     if (window.location.href.startsWith('https://gifary10.github.io/isr-login-access/')) {
@@ -35,3 +33,4 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 });
+
