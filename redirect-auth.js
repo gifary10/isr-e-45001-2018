@@ -1,18 +1,18 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     function isUserLoggedIn() {
-    const loginData = localStorage.getItem('safetyReportLoginData'); // disamakan
+    const loginData = localStorage.getItem('safetyReportLoginData');
     if (!loginData) return false;
 
     try {
         const parsed = JSON.parse(loginData);
 
-        if (!parsed.username || !parsed.email || !parsed.accessCode) return false;
+        if (!parsed.user || !parsed.email || !parsed.accessCode) return false;
 
         const now = Date.now();
         const eightHours = 8 * 60 * 60 * 1000;
         if (now - parsed.loginTime > eightHours) {
-            localStorage.removeItem('safetyReportLoginData'); // disamakan
+            localStorage.removeItem('safetyReportLoginData');
             return false;
         }
 
@@ -33,4 +33,5 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 });
+
 
