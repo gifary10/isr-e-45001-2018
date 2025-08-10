@@ -156,26 +156,7 @@
     <script src="app.js" type="module"></script>
     <script src="dashboard.js" type="module"></script>
 
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    const loginData = localStorage.getItem('safetyReportLoginData');
-    const isLoggedIn = loginData && (() => {
-        try {
-            const data = JSON.parse(loginData);
-            const now = Date.now();
-            return data.loginTime && (now - data.loginTime) <= (8 * 60 * 60 * 1000);
-        } catch {
-            return false;
-        }
-    })();
-
-    if (!isLoggedIn) {
-        // Redirect ke halaman login
-        window.location.href = 'https://gifary10.github.io/isr-login-access/';
-    }
-});
-</script>
-    
 </body>
 </html>
+
 
