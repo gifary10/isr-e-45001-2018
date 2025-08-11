@@ -1,0 +1,193 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISO 45001 Implementation Guide</title>
+    <meta name="theme-color" content="#303030" />
+    <meta name="description" content="Panduan implementasi lengkap untuk ISO 45001:2018 Sistem Manajemen Kesehatan dan Keselamatan Kerja">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="app-container">
+        <nav class="navbar navbar-dark" style="background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));">
+            <div class="container-fluid d-flex align-items-center justify-content-between position-relative">
+                <!-- Logo kiri -->
+                <div class="d-flex align-items-center" style="flex: 1;">
+                    <img src="logop.png" alt="Logo" style="height: 30px;">
+                </div>
+
+                <!-- Title tengah -->
+                <div class="position-absolute top-50 start-50 translate-middle text-white fw-bold">
+                    ISO 45001:2018
+                </div>
+
+                <!-- Logout kanan -->
+                <div style="flex: 1; text-align: right;">
+                    <a href="https://gifary10.github.io/isr-login-access/" class="btn btn-outline-light">
+                        Logout
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Toast container for error messages -->
+        <div id="toast-container" class="toast-container position-fixed bottom-0 end-0 p-3"></div>
+
+        <main>
+            <!-- Main Content View -->
+            <div id="main-content-view">
+                <!-- Search moved above nav bar -->
+                <div class="search-container">
+                    <div class="position-relative">
+                        <label for="search-input" class="visually-hidden">Cari klausul atau sub klausul</label>
+                        <input type="text" class="form-control search-input" id="search-input" 
+                               placeholder="Cari klausul atau sub klausul..." aria-label="Cari klausul atau sub klausul">
+                    </div>
+                </div>
+
+                <!-- Horizontal scrollable nav bar -->
+                <div class="clauses-nav-container">
+                    <div class="clauses-nav-scroll">
+                        <nav class="clauses-nav" id="clauses-nav" role="tablist">
+                            <!-- Home tab will be added first by JavaScript -->
+                            <!-- Clause nav items will be populated by JavaScript -->
+                        </nav>
+                    </div>
+                </div>
+
+                <!-- Home View Container -->
+                <div class="container mt-3 px-3" id="home-view-container">
+                    <!-- Home content will be rendered here -->
+                </div>
+
+                <div class="container mt-3 d-none" id="clauses-container">
+                    <div class="section-title">
+                        <h1 class="h5">Daftar Klausul</h1>
+                        <span class="badge bg-light text-dark">10 Klausul</span>
+                    </div>
+                    
+                    <div class="row px-2" id="clauses-list" role="list">
+                        <!-- Klausul akan diisi oleh JavaScript -->
+                    </div>
+                </div>
+
+                <div class="container mt-3 d-none px-3" id="clause-detail-container">
+                    <article>
+                        <div class="card border-0">
+                            <div class="clause-header" id="clause-title" tabindex="0">
+                                Klausul Detail
+                            </div>
+                            <div class="clause-body">
+                                <p id="clause-description">Deskripsi klausul akan muncul di sini</p>
+                                
+                                <div class="section-title mt-4">
+                                    <h2 class="h6">Sub Klausul</h2>
+                                </div>
+                                
+                                <div id="subclauses-list" role="list">
+                                    <!-- Sub klausul akan diisi oleh JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="container mt-3 d-none px-3" id="subclause-detail-container">
+                    <article>
+                        <div class="card border-0">
+                            <div class="clause-header" id="subclause-title" tabindex="0">
+                                Sub Klausul Detail
+                            </div>
+                            <div class="clause-body">
+                                <p id="subclause-description">Deskripsi sub klausul akan muncul di sini</p>
+                                
+                                <div class="tab-container" role="tablist">
+                                    <button class="tab active" id="implementation-tab" data-tab="implementation" role="tab" aria-selected="true" aria-controls="implementation-content">Implementasi</button>
+                                    <button class="tab" id="documents-tab" data-tab="documents" role="tab" aria-selected="false" aria-controls="documents-content">Dokumen</button>
+                                    <button class="tab" id="guidance-tab" data-tab="guidance" role="tab" aria-selected="false" aria-controls="guidance-content">Panduan</button>
+                                </div>
+                                
+                                <div class="tab-content active" id="implementation-content" role="tabpanel" aria-labelledby="implementation-tab">
+                                    <ul class="list-unstyled" id="implementation-list" role="list">
+                                        <!-- Implementasi akan diisi oleh JavaScript -->
+                                    </ul>
+                                </div>
+                                
+                                <div class="tab-content" id="documents-content" role="tabpanel" aria-labelledby="documents-tab">
+                                    <div id="documents-list" role="list">
+                                        <!-- Dokumen akan diisi oleh JavaScript -->
+                                    </div>
+                                </div>
+                                
+                                <div class="tab-content" id="guidance-content" role="tabpanel" aria-labelledby="guidance-tab">
+                                    <div class="empty-state">
+                                        <i class="bi bi-info-circle" aria-hidden="true"></i>
+                                        <p>Panduan implementasi akan ditampilkan di sini</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Floating buttons -->
+        <button class="floating-btn back-floating-btn" id="back-btn" aria-label="Kembali ke daftar klausul" style="display: none;">
+            <i class="bi bi-arrow-left" aria-hidden="true"></i>
+        </button>
+        
+        <button class="floating-btn back-floating-btn" id="back-subclause-btn" aria-label="Kembali ke detail klausul" style="display: none;">
+            <i class="bi bi-arrow-left" aria-hidden="true"></i>
+        </button>
+        
+        <button class="floating-btn" id="scroll-top-btn" style="display: none;" aria-label="Kembali ke atas">
+            <i class="bi bi-arrow-up" aria-hidden="true"></i>
+        </button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js" type="module"></script>
+
+    <script>
+(function() {
+  const LOGIN_URL = "https://gifary10.github.io/isr-login-access/";
+
+  const params = new URLSearchParams(window.location.search);
+  const auth = params.get("auth");
+
+  if (auth) {
+    try {
+      const decoded = JSON.parse(atob(auth));
+      localStorage.setItem("authData", JSON.stringify(decoded));
+      window.history.replaceState({}, document.title, window.location.pathname);
+    } catch (err) {
+      console.error("Token tidak valid");
+    }
+  }
+
+  const savedAuth = localStorage.getItem("authData");
+  if (!savedAuth) {
+    // Redirect ke situs login A dengan URL tujuan
+    window.location.href = `${LOGIN_URL}?redirect=${encodeURIComponent(window.location.href)}`;
+    return;
+  }
+
+  const { expiry } = JSON.parse(savedAuth);
+  if (Date.now() > expiry) {
+    localStorage.removeItem("authData");
+    alert("Sesi login telah berakhir, silakan login kembali.");
+    window.location.href = `${LOGIN_URL}?redirect=${encodeURIComponent(window.location.href)}`;
+  }
+})();
+</script>
+
+</body>
+</html>
