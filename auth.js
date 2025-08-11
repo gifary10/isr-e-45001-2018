@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', async function() {
 function redirectToLogin() {
   // Simpan URL saat ini untuk redirect kembali setelah login
   sessionStorage.setItem('redirectUrl', window.location.href);
-  window.location.href = 'https://your-login-app-url.com';
+  window.location.href = 'https://gifary10.github.io/isr-login-access/';
 }
 
 // Untuk logout
