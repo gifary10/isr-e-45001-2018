@@ -1,0 +1,108 @@
+{
+    "metadata": {
+        "title": "Klausul 8 - Operasi | ISO 45001:2018",
+        "description": "Klausul 8 mencakup persyaratan untuk perencanaan dan pengendalian operasional dalam sistem manajemen K3.",
+        "keywords": "ISO 45001, Operasi, Pengendalian Operasional, Rencana Tanggap Darurat"
+    },
+    "clause": {
+        "number": "8",
+        "title": "Operasi",
+        "introduction": "Organisasi harus merencanakan, menerapkan, dan mengendalikan proses yang diperlukan untuk memenuhi persyaratan sistem manajemen K3 dan untuk mengimplementasikan tindakan yang diidentifikasi dalam Klausul 6."
+    },
+    "subClauses": [
+        {
+            "number": "8.1",
+            "title": "Perencanaan dan pengendalian operasional",
+            "description": "Organisasi harus merencanakan, menerapkan, dan mengendalikan proses untuk memenuhi persyaratan K3 dan mengimplementasikan tindakan yang diidentifikasi.",
+            "implementation": [
+                "Identifikasi proses operasional kritis",
+                "Pengembangan prosedur operasi aman",
+                "Pengendalian kontraktor dan pemasok",
+                "Pengelolaan perubahan"
+            ],
+            "documents": [
+                {
+                    "name": "Prosedur Operasi Aman",
+                    "type": "wajib",
+                    "description": "Instruksi kerja untuk aktivitas berisiko tinggi"
+                },
+                {
+                    "name": "Register Pengendalian Kontraktor",
+                    "type": "wajib",
+                    "description": "Dokumentasi evaluasi dan pengawasan kontraktor"
+                },
+                {
+                    "name": "Formulir Persetujuan Kerja Aman",
+                    "type": "wajib",
+                    "description": "Dokumen izin kerja untuk aktivitas berbahaya"
+                }
+            ]
+        },
+        {
+            "number": "8.2",
+            "title": "Persiapan dan tanggap darurat",
+            "description": "Organisasi harus menetapkan, menerapkan, dan memelihara proses untuk mempersiapkan dan menanggapi situasi darurat potensial.",
+            "implementation": [
+                "Identifikasi skenario darurat",
+                "Pengembangan rencana tanggap darurat",
+                "Pelatihan dan simulasi",
+                "Evaluasi dan perbaikan rencana"
+            ],
+            "documents": [
+                {
+                    "name": "Rencana Tanggap Darurat",
+                    "type": "wajib",
+                    "description": "Dokumen yang menjelaskan prosedur tanggap darurat"
+                },
+                {
+                    "name": "Rekaman Latihan Darurat",
+                    "type": "wajib",
+                    "description": "Dokumentasi hasil simulasi tanggap darurat"
+                },
+                {
+                    "name": "Daftar Tim Tanggap Darurat",
+                    "type": "pendukung",
+                    "description": "Susunan personel penanggung jawab tanggap darurat"
+                }
+            ]
+        }
+    ],
+    "implementationGuidance": {
+        "title": "Panduan Implementasi Klausul 8",
+        "steps": [
+            {
+                "step": 1,
+                "title": "Pengendalian Operasional",
+                "description": "Menerapkan pengendalian untuk aktivitas berisiko",
+                "activities": [
+                    "Identifikasi proses kritis",
+                    "Pengembangan prosedur kerja aman",
+                    "Penerapan izin kerja",
+                    "Pengawasan rutin operasional"
+                ]
+            },
+            {
+                "step": 2,
+                "title": "Manajemen Perubahan",
+                "description": "Mengelola perubahan yang mempengaruhi K3",
+                "activities": [
+                    "Penetapan prosedur manajemen perubahan",
+                    "Penilaian risiko perubahan",
+                    "Komunikasi perubahan ke stakeholders",
+                    "Monitoring pasca implementasi"
+                ]
+            },
+            {
+                "step": 3,
+                "title": "Kesiapan Darurat",
+                "description": "Mempersiapkan organisasi untuk situasi darurat",
+                "activities": [
+                    "Identifikasi potensi keadaan darurat",
+                    "Pengembangan skenario tanggap darurat",
+                    "Pelatihan dan simulasi berkala",
+                    "Evaluasi dan perbaikan rencana"
+                ]
+            }
+        ]
+    }
+}
