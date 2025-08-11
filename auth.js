@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', async function() {
   }
 
   try {
-    const response = await fetch(`https://script.google.com/macros/s/AKfycbyndEy1mqc0E56C7u18mpK65e50hwS0JirWN0u5PjO94D6MNsSYlayOZb_vZsW9JleyEw/exec?action=verifyToken&token=${token}&user=${user}&email=${email}&produk=${produk}`);
+    const response = await fetch(`https://script.google.com/macros/s/AKfycbyqYUZwWgD2hqLf12tdrcwoJtNl8EPGej1RgrFXJtlP5Z_GshzRqNOfVufROGcEJ1bvSA/exec?action=verifyToken&token=${token}&user=${user}&email=${email}&produk=${produk}`);
     const data = await response.json();
 
     if (data.status !== "success") {
