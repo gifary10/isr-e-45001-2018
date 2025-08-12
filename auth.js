@@ -1,44 +1,43 @@
-// auth.js - Tempatkan di link tujuan
 document.addEventListener('DOMContentLoaded', async function() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const token = urlParams.get('token');
-  const user = urlParams.get('user');
-  const email = urlParams.get('email');
-  const produk = urlParams.get('produk');
+  const token = sessionStorage.getItem('authToken');
+  const user = sessionStorage.getItem('authUser');
+  const email = sessionStorage.getItem('authEmail');
+  const produk = sessionStorage.getItem('authProduk');
 
   if (!token || !user || !email || !produk) {
-    redirectToLogin();
+    redirectToLogin('missing_credentials');
     return;
   }
 
   try {
-    const response = await fetch(`https://script.google.com/macros/s/AKfycbyqYUZwWgD2hqLf12tdrcwoJtNl8EPGej1RgrFXJtlP5Z_GshzRqNOfVufROGcEJ1bvSA/exec?action=verifyToken&token=${token}&user=${user}&email=${email}&produk=${produk}`);
+    const response = await fetch(
+      'https://script.google.com/macros/s/AKfycbz1NUWREhzzRaEiU50CDzx5i9ksu_cJQYoHDgnsGfyOWrXv8Bwp853i4GhZZezDD5OcXg/exec',
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({ action: 'verifyToken', token, user, email, produk })
+      }
+    );
+
     const data = await response.json();
 
-    if (data.status !== "success") {
-      redirectToLogin();
+    if (data.status !== 'success') {
+      redirectToLogin('invalid_token');
     }
   } catch (error) {
     console.error('Error verifying token:', error);
-    redirectToLogin();
+    redirectToLogin('verify_error');
   }
 });
 
-function redirectToLogin() {
-  // Simpan URL saat ini untuk redirect kembali setelah login
+function redirectToLogin(reason) {
   sessionStorage.setItem('redirectUrl', window.location.href);
-  window.location.href = 'https://gifary10.github.io/isr-login-access/';
+  window.location.href = `https://gifary10.github.io/isr-login-access/?reason=${encodeURIComponent(reason)}`;
 }
 
-// Untuk logout
 function logout() {
-  // Hapus token dari sessionStorage
-  sessionStorage.removeItem('authToken');
-  sessionStorage.removeItem('authUser');
-  sessionStorage.removeItem('authEmail');
-  sessionStorage.removeItem('authProduk');
-  redirectToLogin();
+  sessionStorage.clear();
+  redirectToLogin('logout');
 }
 
-// Tambahkan event listener untuk logout button jika ada
 document.getElementById('logoutBtn')?.addEventListener('click', logout);
