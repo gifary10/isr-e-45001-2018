@@ -158,29 +158,37 @@
     <script src="js/app.js" type="module"></script>
 
 <script>
-const API_URL = "https://script.google.com/macros/s/AKfycbzF_RpLkBzuujzpEBVw2KGq7Fmo2VVO_wqX_KSn7m4_BTKGWXByLzLjDdThhJrOkmkyJw/exec"; // sama seperti login
-const params = new URLSearchParams(window.location.search);
-let token = params.get("token") || localStorage.getItem("accessToken");
+const JSON_URL = "https://script.google.com/macros/s/AKfycbxREnHc45oaAIKbbPB7mWCcPMynGgQcKbSmgZPaoMZhvFB1OtXAawjV7Hss_hlBzRZHiA/exec"; // ganti
 
-if (!token) {
-  window.location.href = "https://gifary10.github.io/isr-login-access/";
+function getQueryParam(name) {
+  return new URLSearchParams(window.location.search).get(name);
 }
 
-async function check() {
-  const res = await fetch(`${API_URL}?action=checkToken&token=${encodeURIComponent(token)}`);
-  const json = await res.json();
-  if (!json.valid) {
-    localStorage.removeItem("accessToken");
-    window.location.href = "https://gifary10.github.io/isr-login-access/";
-  } else {
-    document.getElementById("content").style.display = "block";
+(async function() {
+  const token = getQueryParam("token");
+  if(!token) return window.location.href="https://gifary10.github.io/isr-login-access/";
+
+  try {
+    const res = await fetch(`${JSON_URL}?token=${token}`);
+    const data = await res.json();
+    if(data.valid) {
+      document.getElementById('message').textContent = "Token valid! Konten ditampilkan.";
+      // TODO: tampilkan konten rahasia di sini
+    } else {
+      document.getElementById('message').textContent = "Token tidak valid/expired, redirecting...";
+      setTimeout(()=>window.location.href="https://gifary10.github.io/isr-login-access/",1000);
+    }
+  } catch(err) {
+    console.error(err);
+    document.getElementById('message').textContent = "Error, redirecting...";
+    setTimeout(()=>window.location.href="https://gifary10.github.io/isr-login-access/",1000);
   }
-}
-check();
+})();
 </script>
 </body>
 
 </html>
+
 
 
 
