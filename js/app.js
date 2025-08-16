@@ -76,11 +76,15 @@ function createHomeTab() {
     homeTab.setAttribute('aria-controls', 'home-view');
     homeTab.textContent = 'Beranda';
 
-    homeTab.addEventListener('click', () => showHomeView());
+    const handleInteraction = () => {
+        showHomeView();
+    };
+    
+    homeTab.addEventListener('click', handleInteraction);
     homeTab.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
-            showHomeView();
+            handleInteraction();
         }
     });
 
@@ -438,6 +442,7 @@ function setupTabs() {
             const contentElement = document.getElementById(`${tabId}-content`);
             if (contentElement) {
                 contentElement.classList.add('active');
+                contentElement.focus();
             }
         });
         
@@ -531,11 +536,35 @@ function handleClauseClick(clauseNumber) {
     showClauseDetail(clauseNumber);
 }
 
+function cleanupEventListeners() {
+    // Clean up any existing event listeners
+    const homeTab = document.getElementById('home-tab');
+    if (homeTab) {
+        const newHomeTab = homeTab.cloneNode(true);
+        homeTab.parentNode.replaceChild(newHomeTab, homeTab);
+    }
+    
+    if (elements.backBtn) {
+        const newBackBtn = elements.backBtn.cloneNode(true);
+        elements.backBtn.parentNode.replaceChild(newBackBtn, elements.backBtn);
+        elements.backBtn = newBackBtn;
+    }
+    
+    if (elements.backSubclauseBtn) {
+        const newBackSubclauseBtn = elements.backSubclauseBtn.cloneNode(true);
+        elements.backSubclauseBtn.parentNode.replaceChild(newBackSubclauseBtn, elements.backSubclauseBtn);
+        elements.backSubclauseBtn = newBackSubclauseBtn;
+    }
+}
+
 function init() {
     if (!checkRequiredElements()) {
         console.error('Aplikasi tidak dapat dijalankan karena elemen yang diperlukan tidak ditemukan');
         return;
     }
+
+    // Clean up any existing event listeners
+    cleanupEventListeners();
 
     // Reset state
     resetAppState();
